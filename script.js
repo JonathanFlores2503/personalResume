@@ -19,3 +19,33 @@ overlay.addEventListener("click", (e) => {
         overlay.classList.remove("open");
     }
 });
+
+
+
+// ===== CAROUSEL =====
+const slides = document.querySelectorAll(".carousel-img");
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((img, i) => {
+        img.classList.remove("active");
+        if (i === index) img.classList.add("active");
+    });
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    currentSlide =
+        (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+// Auto cambio cada 4s
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 4000);
