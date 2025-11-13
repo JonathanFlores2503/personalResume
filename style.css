@@ -53,38 +53,65 @@ h1, h2, h3 {
     color: #fff;
 }
 
-
-/* ===== OVERLAY MENU ===== */
+/* ===== OVERLAY MENU (FULL SCREEN) ===== */
 .overlay {
-    height: 100%;
-    width: 0;
     position: fixed;
-    z-index: 2000;
     top: 0;
     left: 0;
-    background-color: rgba(10, 10, 10, 0.96);
-    overflow-x: hidden;
-    transition: 0.4s ease;
-    padding-top: 60px;
+    height: 100%;
+    width: 0;                     /* cerrado */
+    background-color: rgba(0, 0, 0, 0.5); /* fondo clickeable */
+    backdrop-filter: blur(4px);   /* opcional, moderno */
+    z-index: 2000;
+    transition: width 0.3s ease;
+    overflow: hidden;             /* evita scroll lateral */
 }
 
+/* Overlay abierto = ocupa toda la pantalla */
+.overlay.open {
+    width: 100%;                  /* ← ahora sí podemos detectar clicks fuera */
+}
+
+
+/* PANEL LATERAL REAL */
+.overlay-panel {
+    width: 260px;                 /* ancho fijo */
+    max-width: 90%;               /* en móviles */
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.97);
+    overflow-y: auto;             /* si hay mucho contenido */
+    padding-top: 20px;
+    transform: translateX(-100%); /* inicia fuera */
+    transition: transform 0.33s ease;
+}
+
+/* Panel visible */
+.overlay.open .overlay-panel {
+    transform: translateX(0);
+}
+
+
+/* CONTENIDO */
 .overlay-content {
-    margin-left: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .overlay-content h2 {
-    font-size: 26px;
-    margin: 20px 0 5px;
+    font-size: 24px;
+    margin: 20px 0 10px;
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
 }
 
 .overlay-content ul li {
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-bottom: 8px;
     color: #aaa;
-    font-size: 16px;
 }
+
+
 
 .close-btn {
     position: absolute;
