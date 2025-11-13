@@ -3,56 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>Jonathan Flores | AI Researcher</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <img class="hero-img" src="img/main.jpg" alt="Foto principal">
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="left">
+            <button id="menuBtn" class="menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
 
-        <div class="hero-right">
-            <h4>TEACHING MACHINES TO SEE WHAT MATTERS</h4>
-            <h1>TU NOMBRE AQUÍ</h1>
-            <h2>A passionate of AI applications in medical imaging</h2>
+        <nav class="top-links">
+            <a href="#about">About Me</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact     </a>
+        </nav>
+    </header>
 
-            <a href="#about" class="btn">ABOUT ME →</a>
+
+    <!-- OVERLAY MENU -->
+    <div id="overlayMenu" class="overlay">
+        <button id="closeMenu" class="close-btn">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="overlay-content">
+            <h2><i data-lucide="user"></i> About Me</h2>
+
+            <h2><i data-lucide="microscope"></i> Research</h2>
+            <ul>
+                <li>• Title 1</li>
+                <li>• Title 2</li>
+            </ul>
+
+            <h2><i data-lucide="briefcase"></i> Experience</h2>
+            <ul>
+                <li>• Work 1</li>
+                <li>• Work 2</li>
+            </ul>
+
+            <h2><i data-lucide="mail"></i> Contact</h2>
+        </div>
+    </div>
+
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-text">
+            <h1>Jonathan Flores</h1>
+            <h3>AI Researcher • Video Anomaly Detection • Deep Learning</h3>
         </div>
     </section>
 
 
-    <!-- ABOUT ME -->
-    <section id="about" class="about-section">
-        <h1>ABOUT ME</h1>
-        <h3>ENGINEER, RESEARCHER AND COMMUNITY BUILDER</h3>
-
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <h1>About Me</h1>
         <p>
-            Developing AI-driven diagnostic tools to enhance clinical decision-making.
+            I am an AI researcher focused on Video Anomaly Detection, classification,
+            and real-time surveillance systems. I combine deep learning, temporal modeling,
+            and lightweight architectures for edge deployment.
         </p>
-
-        <a class="btn about-btn">EXPLORE MY PROJECTS →</a>
-
-        <p>
-            Advocating for inclusion, mentorship, and scientific community building.
-        </p>
-
-        <a class="btn about-btn">SEE OUTREACH PROJECTS →</a>
-
-        <p>
-            Sharing knowledge to build the next generation of innovators.
-        </p>
-
-        <a class="btn about-btn">EXPLORE MY CLASSES →</a>
-
-        <div class="about-images">
-            <img src="img/img_1.jpg">
-            <img src="img/img_2.jpg">
-            <img src="img/img_3.jpg">
-        </div>
     </section>
 
+
+    <!-- RESEARCH SECTION -->
+    <section id="research" class="section">
+        <h1>Research</h1>
+        <p>Here will go your projects, papers or TransLowNet explanation.</p>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h1>Contact</h1>
+        <p>Email: yourmail@example.com</p>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-
 </html>
