@@ -1,11 +1,21 @@
-const menuBtn = document.getElementById("menuBtn");
-const closeMenu = document.getElementById("closeMenu");
 const overlay = document.getElementById("overlayMenu");
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeMenu");
+const panel = document.querySelector(".overlay-panel");
 
-menuBtn.onclick = () => {
-    overlay.style.width = "15%";
-};
+// Abrir
+menuBtn.addEventListener("click", () => {
+    overlay.classList.add("open");
+});
 
-closeMenu.onclick = () => {
-    overlay.style.width = "0%";
-};
+// Cerrar con X
+closeBtn.addEventListener("click", () => {
+    overlay.classList.remove("open");
+});
+
+// Cerrar si hago click fuera del panel
+overlay.addEventListener("click", (e) => {
+    if (!panel.contains(e.target)) {
+        overlay.classList.remove("open");
+    }
+});
