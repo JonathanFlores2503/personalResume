@@ -244,3 +244,309 @@ h1, h2, h3 {
     color: #cccccc;
     line-height: 1.6;
 }
+
+
+
+
+/* ===== ABOUT ME SECTION ===== */
+.about-section {
+    padding: 120px 40px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.about-subtitle {
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* GRID */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+}
+
+.about-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-item i {
+    width: 40px;
+    height: 40px;
+    stroke-width: 1.8;
+}
+
+.about-item h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.about-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* MOBILE */
+@media(max-width: 750px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+
+.about-links {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-links a {
+    text-decoration: none;
+    border: 2px solid #000;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #000;
+    transition: 0.25s ease;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;  /* botones ahora tienen prioridad */
+}
+
+.about-links a:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+/* Hace toda la tarjeta clickeable */
+.researcher-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.researcher-card .full-click {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;  /* antes 5 — baja al fondo */
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+/* ===== EXPERIENCE ===== */
+/* ===== EXPERIENCE SECTION ===== */
+.experience-section {
+    padding: 120px 40px;
+    text-align: center;
+    background: #0c0c0c;
+}
+
+.experience-section h1 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARDS */
+.experience-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    border-color: #444;
+}
+
+/* TITLES */
+.experience-card h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* YEARS */
+.exp-years {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+/* LIST */
+.experience-card ul {
+    padding-left: 20px;
+}
+
+.experience-card ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.45;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    .experience-card {
+        padding: 20px;
+    }
+}
+
+
+
+/* Links dentro de experiencia */
+.exp-link {
+    color: #ccc;           /* azul profesional */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.exp-link:hover {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+
+
+/* ===== CENTER-ZOOM PHOTO CAROUSEL ===== */
+
+/*//////////////////////////////////////////////////*/
+
+
+.my-carousel {
+  width: 40%;
+  padding: 100px 0;
+   margin-top: 80px;   /* ← espacio negro arriba */
+    padding-top: 20px;  /* opcional */
+}
+
+.swiper-slide {
+  width: 200px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 420px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+
+
+/*/////////////////////////////////////////////*/
+
+.education-section {
+    padding: 120px 40px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.education-section h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+/* GRID */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARDS */
+.edu-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 30px 28px 22px;
+    border-radius: 16px;
+    position: relative;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+/* LOGO */
+.edu-logo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 75px;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 12px #fff3);
+}
+
+/* TEXT */
+.edu-card h2 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 8px;
+    margin-top: 25px; /* hace espacio para el logo */
+}
+
+.edu-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.education-section h1 {
+    color: #000000 !important;
+    font-size: 42px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+
