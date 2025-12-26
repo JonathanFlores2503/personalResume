@@ -36,7 +36,7 @@
 
         <div class="overlay-panel">
             <button id="closeMenu" class="close-btn">
-                <i data-lucide="x"></i>
+                <!-- <i data-lucide="x"></i> -->
             </button>
 
             <div class="overlay-content">
@@ -68,7 +68,7 @@
         <!-- CARRUSEL -->
         <div class="carousel-container">
             <div class="carousel">
-                <img src="img/img_7.jpg" class="carousel-img active">
+                <img src="img/img_15.jpg" class="carousel-img active">
                 <img src="img/img_4.jpg" class="carousel-img">
                 <img src="img/img_15.jpg" class="carousel-img">
                 <img src="img/img_6.jpg" class="carousel-img">
@@ -107,31 +107,39 @@
                 <div class="about-links">
                     <a href="#projects">Projects</a>
                     <a href="#papers">Papers</a>
-                    <a href="#conferences">Conferences</a>
+                    <a href="#papers">Conferences</a>
+                    <a href="#papers">Patents</a>
+
+
                 </div>
             </div>
 
 
-            <div class="about-item">
+            <div class="about-item researcher-card">
                 <i data-lucide="laptop"></i>
                 <h2>Developer</h2>
                 <p>Experience in QA, full-stack workflows, and intelligent systems on edge devices.</p>
-                <a href="#education" class="full-click"></a>
+                <a href="#experience" class="full-click"></a>
                 <div class="about-links">
                     <a href="#projects">Projects</a>
                 </div>
             </div>
 
-            <div class="about-item">
+            <div class="about-item researcher-card">
                 <i data-lucide="cpu"></i>
                 <h2>Engineer</h2>
                 <p>Designed applied technologies such as a motorcycle anti-theft and safety system.</p>
+                <a href="#experience" class="full-click"></a>
+                <div class="about-links">
+                    <a href="#projects">Projects</a>
+                </div>
             </div>
 
-            <div class="about-item">
+            <div class="about-item researcher-card">
                 <i data-lucide="wrench"></i>
                 <h2>Technician</h2>
                 <p>Professional repair and diagnostics of computers, laptops, and smartphones.</p>
+                <a href="#experience" class="full-click"></a>
             </div>
 
         </div>
@@ -181,8 +189,11 @@
                         SOLERA
                     </a>
                 </h2>
+
                 <p class="exp-years">Software Development Engineer In Test I | 2022 </p>
                 <p class="exp-years">Jr Software Development Engineer | 2022 </p>
+
+                
                 <ul>
                     <li>Tester's manual and automation in the quality of the company's applications.</li>
                     <li>Developed new features in existing applications.</li>
@@ -225,37 +236,72 @@
     <!-- ================= -->
     <!-- EDUCATION SUBSECTION -->
     <!-- ================= -->
-    <section id="education" class="education-section">
-    <h1>Education</h1>
+    <section id="education" class="education-section-arch">
 
-        <div class="education-grid">
+        <h1 class="education-title">Education</h1>
 
-            <div class="edu-card">
-                <img src="img/esime.jpg" class="edu-logo">
-                <h2>PhD in Communications and Electronics</h2>
-                <p>ESIME Unidad Culhuacán – IPN | 2023–2027</p>
+        <div class="education-arch-grid">
+
+            <!-- PhD -->
+            <div class="edu-arch-card edu-purple">
+                <div class="arch-top">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <div class="arch-content">
+                    <h2>PhD in Communications & Electronics</h2>
+                    <a href="https://posgrados.esimecu.ipn.mx/" target="_blank" class="exp-link">
+                        <p>ESIME Culhuacán – IPN<br>2023–2027</p>
+                    </a>
+                    <!-- <p>ESIME Culhuacán – IPN<br>2023–2027</p> -->
+                </div>
             </div>
 
-            <div class="edu-card">
-                <img src="img/uec.jpg" class="edu-logo">
-                <h2>Research Student</h2>
-                <p>The University of Electro-Communications – Japan | 2023–2024</p>
+            <!-- Research Stay -->
+            <div class="edu-arch-card edu-blue">
+                <div class="arch-top">
+                    <i data-lucide="school"></i>
+                </div>
+                <div class="arch-content">
+                    <h2>Research Student</h2>
+                    <a href="https://researchmap.jp/VC_rocky?lang=ja" target="_blank" class="exp-link">
+                        <p>UEC Tokyo – Japan<br>2023–2024</p>
+                    </a>
+                    
+                </div>
             </div>
 
-            <div class="edu-card">
-                <img src="img/esime.jpg" class="edu-logo">
-                <h2>MSE in Microelectronics</h2>
-                <p>ESIME Unidad Culhuacán – IPN | 2020–2022</p>
+            <!-- MSc -->
+            <div class="edu-arch-card edu-red">
+                <div class="arch-top">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <div class="arch-content">
+                    <h2>MSE in Microelectronics</h2>
+                    <a href="https://posgrados.esimecu.ipn.mx/" target="_blank" class="exp-link">
+                        <p>ESIME Culhuacán – IPN<br>2020–2022</p>
+                    </a>
+                    
+                </div>
             </div>
 
-            <div class="edu-card">
-                <img src="img/upiita.png" class="edu-logo">
-                <h2>BSc in Automotive Systems Engineer</h2>
-                <p>UPIITA – IPN | 2014–2019</p>
+            <!-- BSc -->
+            <div class="edu-arch-card edu-orange">
+                <div class="arch-top">
+                    <i data-lucide="cpu"></i>
+                </div>
+                <div class="arch-content">
+                    <h2>BSc in Automotive Systems Engineering</h2>
+                    <a href="https://www.upiita.ipn.mx/oferta-educativa/isisa" target="_blank" class="exp-link">
+                        <p>UPIITA – IPN<br>2015–2019</p>
+                    </a>
+                    
+                </div>
             </div>
 
         </div>
     </section>
+
+
 
 
 
@@ -268,26 +314,99 @@
     <!-- ================= -->
     <!-- PROJECTS SUBSECTION -->
     <!-- ================= -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <p>Here you’ll describe TransLowNet, driver monitoring, AR translator, etc.</p>
+    <section id="projects" class="projects-section">
+        <h1 class="projects-title">Projects</h1>
+
+        <div class="carousel-wrapper">
+
+            <!-- Botón Izquierdo -->
+            <button id="prevBtn" class="nav-btn">❮</button>
+
+            <!-- Carrusel -->
+            <div id="projectCarousel" class="carousel_2"></div>
+
+            <!-- Botón Derecho -->
+            <button id="nextBtn" class="nav-btn">❯</button>
+        </div>
     </section>
+
 
     <!-- ================= -->
     <!-- PAPERS SUBSECTION -->
     <!-- ================= -->
-    <section id="papers" class="section">
+    <!-- <section id="papers" class="section">
         <h2>Papers</h2>
         <p>List of publications in journals, conferences, book chapters.</p>
+    </section> -->
+
+
+    <section id="papers" class="papers-section">
+
+    <div class="papers-top">
+        
+        <!-- Imagen izquierda -->
+        <div class="papers-image">
+        <img src="img/Ch_1.png" alt="Research workspace">
+        </div>
+
+        <!-- Papers -->
+        <div class="papers-content">
+        <h1>Papers</h1>
+
+        <div class="papers-grid">
+            <a href="https://www.mdpi.com/2076-3417/15/17/9249" class="paper-box">
+                Flores-Monroy, J., Benitez-Garcia, G., Nakano-Miyatake, M., & Takahashi, H. (2025). An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance. Applied Sciences, 15(17), 9249 </a>
+
+            <a href="https://ieeexplore.ieee.org/abstract/document/10197740" class="paper-box">Sanchez-Ruiz, M., Flores-Monroy, J., Nakano-Miyatake, M., Escamilla-Hernandez, E., & Perez-Meana, H. (2023, July). Face Expression Recognition using Recurrent Neural Networks. In 2023 46th International Conference on Telecommunications and Signal Processing (TSP) (pp. 148-153). IEEE.</a>
+
+
+            <a href="https://www.mdpi.com/2079-9292/11/16/2558" class="paper-box">Flores-Monroy, J., Nakano-Miyatake, M., Escamilla-Hernandez, E., Sanchez-Perez, G., & Perez-Meana, H. (2022). SOMN_IA: Portable and universal device for real-time detection of driver’s drowsiness and distraction levels. Electronics, 11(16), 2558.</a>
+
+
+            <a href="https://ieeexplore.ieee.org/abstract/document/9633082" class="paper-box">Flores-Monroy, J., Nakano-Miyatake, M., Sanchez-Perez, G., & Perez-Meana, H. (2021, November). Visual-based real time driver drowsiness detection system using CNN. In 2021 18th International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE) (pp. 1-5). IEEE.</a>
+        </div>
+
+        <div class="papers-cta">
+        <a href="research.html#projects" class="cta-outline">
+            SEE OUTREACH PROJECTS
+            <span class="cta-arrow">→</span>
+        </a>
+        </div>
+
+
+        </div>
+
+        
+
+
+
+    </div>
+
+    <!-- Logos -->
+    <div class="papers-logos">
+        <div class="logos-track" id="logosTrack">
+        <img src="img/logo_1.png">
+        <img src="img/logo_1.png">
+        <img src="img/logo_1.png">
+        <img src="img/logo_1.png">
+        <img src="img/logo_1.png">
+        </div>
+    </div>
+
     </section>
+
+
+
+
+
 
     <!-- ================= -->
     <!-- CONFERENCES SUBSECTION -->
     <!-- ================= -->
-    <section id="conferences" class="section">
+    <!-- <section id="conferences" class="section">
         <h2>Conferences</h2>
         <p>Your conference talks, posters, workshop presentations.</p>
-    </section>
+    </section> -->
 
 
 
@@ -295,7 +414,7 @@
 
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact-section">
         <h1>Contact</h1>
         <p>Email: yourmail@example.com</p>
     </section>

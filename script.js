@@ -135,3 +135,156 @@ var swiper = new Swiper(".my-carousel", {
   },
   speed: 1500
 });
+
+
+
+
+//--------------------------------------------------
+// PROJECTS DATA — Add as many as you want
+//--------------------------------------------------
+
+const projects = [
+    {
+        title: "TransLowNet",
+        img: "img/img_1.jpg",
+        description: "Here goes the detailed description for TransLowNet... Write a long text to see how the layout responds. This is placeholder content.",
+        links: [
+            {text: "Video", url: "#"},
+            {text: "Paper", url: "#"},
+            {text: "Official Page", url: "#"}
+        ]
+    },
+    {
+        title: "SOMN-IA",
+        img: "img/img_2.jpg",
+        description: "Here goes the detailed description for SOMN-IA... Long description placeholder to check layout.",
+        links: [
+            {text: "Video", url: "#"},
+            {text: "Website", url: "#"}
+        ]
+    },
+    {
+        title: "PJ-System",
+        img: "img/img_3.jpg",
+        description: "Here goes the detailed description for PJ-System.",
+        links: [
+            {text: "Video", url: "#"},
+            {text: "Press Release", url: "#"},
+            {text: "Prototype", url: "#"}
+        ]
+    },
+    {
+        title: "Project 01",
+        img: "img/img_4.jpg",
+        description: "Generic description for project 01.",
+        links: [{text: "More Info", url: "#"}]
+    },
+    {
+        title: "Project 02",
+        img: "img/img_5.jpg",
+        description: "Generic description for project 02.",
+        links: [{text: "More Info", url: "#"}]
+    },
+    {
+        title: "Project 03",
+        img: "img/img_6.jpg",
+        description: "Generic description for project 03.",
+        links: [{text: "More Info", url: "#"}]
+    }
+];
+
+//--------------------------------------------------
+// CAROUSEL LOGIC
+//--------------------------------------------------
+
+let currentIndex = 0;
+
+const carousel = document.getElementById("projectCarousel");
+
+function renderCarousel() {
+    carousel.innerHTML = "";
+
+    // L + C + R = 3 cards visible
+    const leftIndex = (currentIndex - 1 + projects.length) % projects.length;
+    const rightIndex = (currentIndex + 1) % projects.length;
+
+    const visible = [leftIndex, currentIndex, rightIndex];
+
+    visible.forEach((i, idx) => {
+        const p = projects[i];
+
+        const card = document.createElement("div");
+        card.className = "project-card";
+        if (i === currentIndex) card.classList.add("active");
+
+        card.innerHTML = `
+            <img class="project-image" src="${p.img}">
+            <div class="project-content">
+                <h2>${p.title}</h2>
+                <p>${p.description}</p>
+                <div class="project-links">
+                    ${p.links.map(l => `<a href="${l.url}" target="_blank">${l.text}</a>`).join("")}
+                </div>
+            </div>
+        `;
+
+        carousel.appendChild(card);
+    });
+}
+
+document.getElementById("nextBtn").onclick = () => {
+    currentIndex = (currentIndex + 1) % projects.length;
+    renderCarousel();
+};
+
+document.getElementById("prevBtn").onclick = () => {
+    currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+    renderCarousel();
+};
+
+// Inicializar
+renderCarousel();
+
+
+
+
+
+const track = document.getElementById("logosTrack");
+const originalLogos = Array.from(track.children);
+
+// 1️⃣ Clonar logos hasta cubrir 2× viewport (controlado)
+function fillTrackSafely() {
+  const viewportWidth = track.parentElement.offsetWidth;
+  let trackWidth = track.scrollWidth;
+
+  let i = 0;
+  while (trackWidth < viewportWidth * 2 && i < 10) {
+    originalLogos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
+    });
+    trackWidth = track.scrollWidth;
+    i++;
+  }
+}
+
+fillTrackSafely();
+
+// 2️⃣ Animación infinita real
+let x = 0;
+const speed = 0.5;
+
+function animate() {
+  x -= speed;
+
+  const resetPoint = track.scrollWidth / 2;
+  if (Math.abs(x) >= resetPoint) {
+    x = 0;
+  }
+
+  track.style.transform = `translateX(${x}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
+
