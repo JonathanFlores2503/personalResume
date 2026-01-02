@@ -656,8 +656,6 @@ html {
 
 /* ===== Papers SECTION ===== */
 
-
-
 .papers-inner {
   max-width: 1000px;   /* MISMO ORDEN QUE EXPERIENCE */
   margin: auto;
@@ -667,11 +665,13 @@ html {
   padding: 120px 60px;
   background: #fff;
   color: #000;
+  overflow-x: hidden;
+
   
 }
 
 .papers-content {
-  max-width: 620px;      /* ancho editorial */
+  max-width: 700px;      /* ancho editorial */
   margin: 0 auto;        /* 👈 CLAVE ABSOLUTA */
   
 }
@@ -704,19 +704,35 @@ html {
 }
 
 .papers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* .paper-box {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+} */
 
 .paper-box {
+  display: block;              /* 🔥 clave */
   border: 2px solid #000;
   padding: 18px;
   border-radius: 10px;
-  text-decoration: none;
-  color: #000;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  text-decoration: none;       /* quita subrayado */
+  color: #000;                 /* color editorial */
+  background: #fff;
+
+  box-sizing: border-box;
 }
 
 .paper-box:hover {
@@ -796,6 +812,14 @@ html {
 .cta-outline:hover .cta-arrow {
   transform: translateX(8px);
 }
+
+@media (min-width: 1100px) {
+  .papers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 
 /* ===== Constact SECTION ===== */
 
