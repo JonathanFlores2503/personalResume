@@ -647,7 +647,21 @@ html {
 
 
 
+
+
+
+
+
+
+
 /* ===== Papers SECTION ===== */
+
+
+
+.papers-inner {
+  max-width: 1000px;   /* MISMO ORDEN QUE EXPERIENCE */
+  margin: auto;
+}
 
 .papers-section {
   padding: 120px 60px;
@@ -659,6 +673,7 @@ html {
 .papers-content {
   max-width: 620px;      /* ancho editorial */
   margin: 0 auto;        /* 👈 CLAVE ABSOLUTA */
+  
 }
 
 .papers-top {
@@ -668,22 +683,32 @@ html {
   display: grid;
   grid-template-columns: 520px 1fr;
   gap: 60px;
-  align-items: start;
+  align-items: stretch;
+
+}
+
+.papers-content h1 {
+  text-align: center;
 }
 
 
+.papers-image {
+  height: 100%;
+}
+
 .papers-image img {
+  height: 100%;
   width: 100%;
-  border-radius: 12px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .papers-grid {
-  justify-content: center;
   display: grid;
-  grid-template-columns: repeat(2, 280px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
+
 
 .paper-box {
   border: 2px solid #000;
@@ -772,73 +797,65 @@ html {
   transform: translateX(8px);
 }
 
-@media (max-width: 768px) {
-
-  /* SECTION */
-  .papers-section {
-    padding: 80px 20px;
-  }
-
-  /* GRID PRINCIPAL */
-  .papers-top {
-    grid-template-columns: 1fr;   /* 🔥 una sola columna */
-    gap: 40px;
-  }
-
-  /* IMAGEN */
-  .papers-image img {
-    max-height: 280px;
-    object-fit: cover;
-  }
-
-  /* CONTENIDO */
-  .papers-content {
-    max-width: 100%;
-  }
-
-  /* PAPERS GRID */
-  .papers-grid {
-    grid-template-columns: 1fr;   /* 🔥 una sola columna */
-    gap: 20px;
-  }
-
-  /* PAPER BOX */
-  .paper-box {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* CTA */
-  .papers-cta {
-    margin-top: 30px;
-  }
-
-  .cta-outline {
-    width: 100%;
-    justify-content: center;
-    padding: 16px 20px;
-    font-size: 14px;
-  }
-}
-
-
-
-/* ===== Papers SECTION ===== */
-
-
-
-
+/* ===== Constact SECTION ===== */
 
 .contact-section {
-    padding: 100px 40px;
-    background: #000000;
-    color: #ffffff;
-    text-align: center;
+  padding: 140px 40px;
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;   /* 🔥 esto evita TODOS los problemas */
+}
+
+
 .contact-title {
-    font-size: 42px;
-    margin-bottom: 40px;
-    font-weight: 800;
-    color: #fff;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.contact-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-card {
+  padding: 18px 36px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 10px;
+
+  /* levitación uniforme */
+  animation: suspend 5s ease-in-out infinite;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-card:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-6px);
+}
+
+
+
+@keyframes suspend {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
