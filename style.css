@@ -656,13 +656,21 @@ html {
   
 }
 
-.papers-top {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: center;
-  
+.papers-content {
+  max-width: 620px;      /* ancho editorial */
+  margin: 0 auto;        /* 👈 CLAVE ABSOLUTA */
 }
+
+.papers-top {
+  max-width: 1200px;   /* controla el layout */
+  margin: 0 auto;      /* 🔥 centra TODO */
+  
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
 
 .papers-image img {
   width: 100%;
@@ -671,8 +679,9 @@ html {
 }
 
 .papers-grid {
+  justify-content: center;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 280px);
   gap: 25px;
 }
 
@@ -708,15 +717,6 @@ html {
   opacity: 0.85;
 }
 
-
-
-
-/* .papers-logos {
-  background: #111;
-  padding: 25px 0;
-  overflow: hidden;
-} */
-
 .logos-track {
   display: flex;
   align-items: center;
@@ -733,9 +733,10 @@ html {
 
 .papers-cta {
   margin-top: 50px;
-  text-align: right;   /* ← CLAVE */
-  
+  display: flex;
+  justify-content: center;
 }
+ 
 
 
 .cta-outline {
@@ -772,7 +773,7 @@ html {
 }
 
 
-
+/* ===== Papers SECTION ===== */
 
 
 
