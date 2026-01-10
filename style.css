@@ -905,18 +905,3 @@ html {
 }
 
 
-
-/* ===== FORCE DESKTOP VIEW ON MOBILE ===== */
-@media (max-width: 900px) {
-
-  body {
-    width: 1280px;              /* MISMO ANCHO QUE ESCRITORIO */
-    transform: scale(0.72);     /* ESCALA VISUAL */
-    transform-origin: top left;
-  }
-
-  html {
-    overflow-x: auto;
-  }
-
-}
