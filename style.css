@@ -1,15 +1,35 @@
+/* ===== FIXED CANVAS LAYOUT (NO SE EXPANDE) ===== */
+.page-canvas {
+  width: 1280px;        /* FORMATO FIJO */
+  max-width: 1280px;
+  margin: 0 auto;       /* CENTRADO */
+  /* overflow-x: hidden; */
+}
+
+
+/* ===== FULL WIDTH BACKGROUND ===== */
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;              /* ocupa todo el ancho */
+    max-width: 100vw;
     height: 65px;
+
     background: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
-    z-index: 1000;
+    z-index: 3000;
+
     border-bottom: 1px solid #222;
 }
 
