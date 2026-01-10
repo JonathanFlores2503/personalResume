@@ -3,6 +3,10 @@ const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeMenu");
 const panel = document.querySelector(".overlay-panel");
 
+
+
+
+
 // Abrir
 menuBtn.addEventListener("click", () => {
     overlay.classList.add("open");
@@ -287,4 +291,6 @@ function animate() {
 }
 
 animate();
+
+
 
