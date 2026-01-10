@@ -903,3 +903,30 @@ html {
   50%  { transform: translateY(-4px); }
   100% { transform: translateY(0); }
 }
+
+
+
+/* ===== FIX MOBILE BREAK (VERY IMPORTANT) ===== */
+@media (max-width: 900px) {
+
+  /* Quitar canvas fijo en móvil */
+  .page-canvas {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Quitar truco full-width en móvil */
+  .full-width {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Navbar normal en móvil */
+  .navbar {
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+
+}
