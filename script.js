@@ -118,6 +118,41 @@ setInterval(() => {
 /////////////////////////////////
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.getElementById("swiper-random");
+  const slides = Array.from(wrapper.children);
+
+  // Fisher–Yates shuffle
+  for (let i = slides.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [slides[i], slides[j]] = [slides[j], slides[i]];
+  }
+
+  slides.forEach(slide => wrapper.appendChild(slide));
+
+  // 🔥 Inicializar Swiper DESPUÉS del shuffle
+  var swiper = new Swiper(".my-carousel", {
+    effect: "coverflow",
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    grabCursor: true,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 150,
+      modifier: 2,
+      slideShadows: false
+    },
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    speed: 1500
+  });
+});
+
+
 
 
 var swiper = new Swiper(".my-carousel", {
@@ -150,51 +185,53 @@ var swiper = new Swiper(".my-carousel", {
 const projects = [
     {
         title: "TransLowNet",
-        img: "img/img_1.jpg",
+        img: "img_John/TransLowNEt.png",
         description: "Here goes the detailed description for TransLowNet... Write a long text to see how the layout responds. This is placeholder content.",
         links: [
-            {text: "Video", url: "#"},
-            {text: "Paper", url: "#"},
-            {text: "Official Page", url: "#"}
+            {text: "Video", url: "https://www.youtube.com/watch?v=Lf5jlRM7C8A"},
+            {text: "Official Web", url: "https://www.ipn.mx/gacetapolitecnica/ver-detalle.html?g=195"},
+            {text: "Demo", url: "https://github.com/JonathanFlores2503/TransLowNet_V2.git"}
         ]
     },
     {
         title: "SOMN-IA",
-        img: "img/img_2.jpg",
+        img: "img_John/Somn_IA.png",
         description: "Here goes the detailed description for SOMN-IA... Long description placeholder to check layout.",
         links: [
-            {text: "Video", url: "#"},
-            {text: "Website", url: "#"}
+            {text: "Video", url: "https://www.youtube.com/watch?v=035Qq5egiS8"},
+            {text: "Paper", url: "https://www.mdpi.com/2079-9292/11/16/2558"},
+            {text: "Patent: MX/a/2022/015919", url: "https://vidoc.impi.gob.mx/busquedarapida"}
+            
         ]
     },
     {
         title: "PJ-System",
-        img: "img/img_3.jpg",
+        img: "img_John/img_6.jpg",
         description: "Here goes the detailed description for PJ-System.",
         links: [
-            {text: "Video", url: "#"},
-            {text: "Press Release", url: "#"},
-            {text: "Prototype", url: "#"}
+            {text: "Video", url: "https://youtu.be/_nhffUBDrV0"},
+            {text: "Reportage", url: "https://www.facebook.com/share/v/1D7zPTeu6G/"},
+            {text: "News", url: "https://www.excelsior.com.mx/nacional/disena-el-ipn-un-sistema-antirrobo-de-motocicletas/1394040"}
         ]
     },
-    {
-        title: "Project 01",
-        img: "img/img_4.jpg",
-        description: "Generic description for project 01.",
-        links: [{text: "More Info", url: "#"}]
-    },
-    {
-        title: "Project 02",
-        img: "img/img_5.jpg",
-        description: "Generic description for project 02.",
-        links: [{text: "More Info", url: "#"}]
-    },
-    {
-        title: "Project 03",
-        img: "img/img_6.jpg",
-        description: "Generic description for project 03.",
-        links: [{text: "More Info", url: "#"}]
-    }
+    // {
+    //     title: "Project 01",
+    //     img: "img/img_4.jpg",
+    //     description: "Generic description for project 01.",
+    //     links: [{text: "More Info", url: "#"}]
+    // },
+    // {
+    //     title: "Project 02",
+    //     img: "img/img_5.jpg",
+    //     description: "Generic description for project 02.",
+    //     links: [{text: "More Info", url: "#"}]
+    // },
+    // {
+    //     title: "Project 03",
+    //     img: "img/img_6.jpg",
+    //     description: "Generic description for project 03.",
+    //     links: [{text: "More Info", url: "#"}]
+    // }
 ];
 
 //--------------------------------------------------
@@ -291,6 +328,28 @@ function animate() {
 }
 
 animate();
+
+
+// ===== SCROLL WAVE REVEAL (RUNS ONCE) =====
+const waveSections = document.querySelectorAll(".wave-section");
+
+const waveObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target); // 👈 SOLO UNA VEZ
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+waveSections.forEach(section => {
+  waveObserver.observe(section);
+});
 
 
 
