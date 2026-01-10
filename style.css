@@ -906,27 +906,17 @@ html {
 
 
 
-/* ===== FIX MOBILE BREAK (VERY IMPORTANT) ===== */
+/* ===== FORCE DESKTOP VIEW ON MOBILE ===== */
 @media (max-width: 900px) {
 
-  /* Quitar canvas fijo en móvil */
-  .page-canvas {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+  body {
+    width: 1280px;              /* MISMO ANCHO QUE ESCRITORIO */
+    transform: scale(0.72);     /* ESCALA VISUAL */
+    transform-origin: top left;
   }
 
-  /* Quitar truco full-width en móvil */
-  .full-width {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  /* Navbar normal en móvil */
-  .navbar {
-    left: 0;
-    transform: none;
-    width: 100%;
+  html {
+    overflow-x: auto;
   }
 
 }
