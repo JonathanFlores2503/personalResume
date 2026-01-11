@@ -186,7 +186,7 @@ const projects = [
     {
         title: "TransLowNet",
         img: "img_John/TransLowNEt.png",
-        description: "Here goes the detailed description for TransLowNet... Write a long text to see how the layout responds. This is placeholder content.",
+        description: "AI framework designed to identify violent and abnormal events in public transportation surveillance, supporting early awareness, improved safety, and informed decision-making to help protect passengers and save lives.",
         links: [
             {text: "Video", url: "https://www.youtube.com/watch?v=Lf5jlRM7C8A"},
             {text: "Official Web", url: "https://www.ipn.mx/gacetapolitecnica/ver-detalle.html?g=195"},
@@ -196,7 +196,7 @@ const projects = [
     {
         title: "SOMN-IA",
         img: "img_John/Somn_IA.png",
-        description: "Here goes the detailed description for SOMN-IA... Long description placeholder to check layout.",
+        description: "AI-based vision system designed to detect driver drowsiness and distraction, supporting accident prevention and helping protect lives by improving road safety in real driving conditions.",
         links: [
             {text: "Video", url: "https://www.youtube.com/watch?v=035Qq5egiS8"},
             {text: "Paper", url: "https://www.mdpi.com/2079-9292/11/16/2558"},
@@ -207,7 +207,7 @@ const projects = [
     {
         title: "PJ-System",
         img: "img_John/img_6.jpg",
-        description: "Here goes the detailed description for PJ-System.",
+        description: "Embedded security system designed to prevent motorcycle theft and enhance rider safety by automatically disabling critical vehicle functions in unauthorized situations.",
         links: [
             {text: "Video", url: "https://youtu.be/_nhffUBDrV0"},
             {text: "Reportage", url: "https://www.facebook.com/share/v/1D7zPTeu6G/"},
