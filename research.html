@@ -1,523 +1,172 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jonathan Flores Monroy | Research</title>
-    <link rel="stylesheet" href="style_2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Research by Jonathan Flores Monroy — Video Anomaly Detection, graph-based and temporal deep learning, publications and datasets." />
+  <title>Jonathan Flores Monroy · Research</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/research.css" />
 </head>
-<body>
+<body class="theme-dark">
 
-    <nav class="navbar">
-        <div class="logo">J. FLORES <span>PhD</span></div>
-            <ul class="nav-links">
-                
-                <li><a href="#video-hero">Home</a></li>
-                <li><a href="#papersContainer">Scientific Publications</a></li>
-                <!-- <li><a href="#achievements">Achievements</a></li> <li><a href="#projects">Projects</a></li> -->
-                <!-- <li><a href="#speakers">Talks</a></li> -->
-                <li><a href="#db-section">Databases</a></li>
-                <li><a href="index.html">About Me</a></li>
-            </ul>
+  <!-- ============ NAV ============ -->
+  <header class="site-nav">
+    <a class="brand" href="index.html">Jonathan Flores <span>PhD · AI</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+      <a href="research.html" data-i18n="nav.research">Research</a>
+      <a href="#papers" data-i18n="nav.publications">Publications</a>
+      <a href="models.html" data-i18n="nav.models">Models</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
     </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <i data-lucide="languages"></i><span class="lang-current">ES</span>
+      </button>
+      <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navLinks" data-i18n-attr="aria-label:nav.menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
 
-    <section id="video-hero" class="hero">
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="videos/video_1.mp4" type="video/mp4">
-                Tu navegador no soporta video.
-            </video>
-            <div class="video-overlay">
-                <h1>Video Anomaly Detection</h1>
-                <p>Advancing real-time security through GNN & Temporal Modeling</p>
-            </div>
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="video-hero" class="r-hero">
+      <div class="r-hero-media">
+        <video autoplay muted loop playsinline poster="figuresPapers/fig1.png">
+          <source src="videos/video_1.mp4" type="video/mp4" />
+        </video>
+        <div class="r-hero-overlay">
+          <h1 class="font-serif" data-i18n="r.hero.title">Video Anomaly Detection</h1>
+          <p data-i18n="r.hero.sub">Advancing real-time safety through graph-based and temporal modeling.</p>
         </div>
+      </div>
     </section>
 
-    <section class="objective">
-        <p>Mi investigación se centra en el desarrollo de arquitecturas de Deep Learning capaces de modelar comportamientos complejos en entornos dinámicos, optimizando la precisión y la eficiencia computacional.</p>
+    <!-- ============ OBJECTIVE ============ -->
+    <section class="r-objective">
+      <div class="container">
+        <p class="reveal" data-i18n="r.objective">
+          My research focuses on deep-learning architectures that model complex behavior in dynamic environments, balancing accuracy with computational efficiency.
+        </p>
+      </div>
     </section>
 
-    <section class="quick-nav">
-        <a href="#latest-results" class="nav-card">
-            <h3>Latest Results</h3>
-            <span>Ver métricas SOTA</span>
+    <!-- ============ QUICK NAV ============ -->
+    <section class="r-quicknav">
+      <div class="container quicknav-grid">
+        <a href="#latest-results" class="quick-card reveal">
+          <h3 data-i18n="r.qn.results">Latest results</h3>
+          <span data-i18n="r.qn.results.sub">State-of-the-art metrics</span>
         </a>
-        <a href="#papers" class="nav-card">
-            <h3>Publications</h3>
-            <span>Archive completo</span>
+        <a href="#papers" class="quick-card reveal">
+          <h3 data-i18n="r.qn.pubs">Publications</h3>
+          <span data-i18n="r.qn.pubs.sub">Full archive</span>
         </a>
-        <a href="#db-section" class="nav-card">
-            <h3>Databases</h3>
-            <span>Custom Datasets</span>
+        <a href="#db-section" class="quick-card reveal">
+          <h3 data-i18n="r.qn.db">Databases</h3>
+          <span data-i18n="r.qn.db.sub">Custom datasets</span>
         </a>
-        <a href="#awards" class="nav-card"> <h3>Achievements</h3>
-            <span>Patents & Awards</span>
+        <a href="#awards" class="quick-card reveal">
+          <h3 data-i18n="r.qn.awards">Achievements</h3>
+          <span data-i18n="r.qn.awards.sub">Patents &amp; awards</span>
         </a>
-        <a href="#speakers" class="nav-card">
-            <h3>Talks</h3>
-            <span>Conferencias Mundiales</span>
-        </a>
-        
+      </div>
     </section>
 
-    <section id="latest-results" class="research-section">
-        <h2 class="section-title">Deep Dive: TransLowNet Results</h2>
+    <!-- ============ LATEST RESULTS ============ -->
+    <section id="latest-results" class="section r-results">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="r.results.title">Deep dive: TransLowNet</h2>
 
-        <div class="research-row">
-            <div class="res-text">
-                <h3>Eficiencia en Baja Iluminación</h3>
-                <p>Utilizando X3D como backbone, logramos una reducción del 15% en falsos positivos en escenarios nocturnos comparado con modelos tradicionales.</p>
-            </div>
-            <div class="res-visual">
-                <img src="figuresPapers/fig1.png" alt="Gráfica de precisión">
-            </div>
-        </div>
-
-        <div class="research-row reverse">
-            <div class="res-text">
-                <h3>Arquitectura GAT-based</h3>
-                <p>La integración de Graph Attention Networks permite capturar la relación entre múltiples actores en la escena, mejorando la detección de eventos de violencia.</p>
-            </div>
-            <div class="res-visual">
-                <img src="figuresPapers/fig2.png" alt="Diagrama de red neuronal">
-            </div>
+        <div class="research-row reveal">
+          <div class="res-text">
+            <h3 data-i18n="r.results.r1.title">Efficiency in low light</h3>
+            <p data-i18n="r.results.r1.text">Using X3D as backbone, we reduced false positives in night-time scenarios by 15% versus conventional models.</p>
+          </div>
+          <div class="res-visual"><img src="figuresPapers/fig1.png" alt="Accuracy chart" /></div>
         </div>
 
-        
-        <div class="research-row">
-            <div class="res-text">
-                <h3>Eficiencia en Baja Iluminación</h3>
-                <p>Utilizando X3D como backbone, logramos una reducción del 15% en falsos positivos en escenarios nocturnos comparado con modelos tradicionales.</p>
-            </div>
-            <div class="res-visual">
-                <img src="figuresPapers/fig3.png" alt="Gráfica de precisión">
-            </div>
+        <div class="research-row reverse reveal">
+          <div class="res-text">
+            <h3 data-i18n="r.results.r2.title">Graph-attention architecture</h3>
+            <p data-i18n="r.results.r2.text">Graph Attention Networks capture relationships between multiple actors in the scene, improving violence-event detection.</p>
+          </div>
+          <div class="res-visual"><img src="figuresPapers/fig2.png" alt="Neural network diagram" /></div>
         </div>
 
-        <div class="research-row reverse">
-            <div class="res-text">
-                <h3>Arquitectura GAT-based</h3>
-                <p>La integración de Graph Attention Networks permite capturar la relación entre múltiples actores en la escena, mejorando la detección de eventos de violencia.</p>
-            </div>
-            <div class="res-visual">
-                <img src="figuresPapers/fig4.png" alt="Diagrama de red neuronal">
-            </div>
+        <div class="r-results-cta reveal">
+          <a href="https://www.mdpi.com/2076-3417/15/17/9249" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="r.results.cta">Read the full paper (MDPI)</a>
         </div>
-        
-        <div class="cta-container">
-            <a href="#" class="btn-main">Leer Paper Completo (MDPI)</a>
-        </div>
+      </div>
     </section>
 
-
-    
-        <section id="papers" class="papers-section">
-            <h2 class="section-title">Scientific Publications</h2>
-            <p class="section-subtitle">A collection of 13+ peer-reviewed papers focusing on Computer Vision & Anomaly Detection.</p>
-
-            <div class="papers-controls">
-                <input type="text" id="paperSearch" placeholder="Search by topic (e.g. GNN, X3D)..." onkeyup="searchPapers()">
-                <div class="filter-tags">
-                    <span class="tag active" onclick="filterPapers('all', event)">All</span>
-                    <span class="tag" onclick="filterPapers('journal', event)">Journals</span>
-                    <span class="tag" onclick="filterPapers('conference', event)">Conferences</span>
-                    <span class="tag" onclick="filterPapers('book', event)">Books</span>
-                </div>
-            </div>
-
-
-
-            <div class="papers-list" id="papersContainer">
-                
-                <article class="paper-card conference" data-title="Detection Classification IEEE VAD VAR">
-                    <div class="paper-info">
-                        <span class="paper-venue">IEEE Xplorer · 2025</span>
-                        <h3>Detection and Classification of Abnormal Human Actions for Video Surveillance on Edge Devices</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_1.pdf" class="paper-link pdf">PDF</a>
-                            <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a>
-                            <!-- <button class="paper-link bib" onclick="copyBib_1()">BibTeX</button> -->
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="paper-card journal" data-title="TransLowNet Anomaly Detection VAD VAR">
-                    <div class="paper-info">
-                        <span class="paper-venue">Applied Sciences · 2025</span>
-                        <h3>TransLowNet: An Online Modular Framework for Anomaly Detection in Public Transportation</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_2.pdf" class="paper-link pdf">PDF</a>
-                            <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a>
-                            <button class="paper-link bib" onclick="copyBib_2()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-                <article class="paper-card conference" data-title="Ownership authentication CLIP VQGAN">
-                    <div class="paper-info">
-                        <span class="paper-venue">IEEE Xplorer · 2024</span>
-                        <h3>Ownership authentication and integrity verification of digital images using generative models and custom signature</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_3.pdf" class="paper-link pdf">PDF</a>
-                            <a href="https://github.com/JonathanFlores2503/NoiseHashGAN" class="paper-link code">Code</a>
-                            <button class="paper-link bib" onclick="copyBib_3()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card book" data-title="Feature Extractor VAD">
-                    <div class="paper-info">
-                        <span class="paper-venue">IOS Press · 2024</span>
-                        <h3>Optimal Feature Extractor for Video Anomaly Detection in Public Transportation Applications</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_4.pdf" class="paper-link pdf">PDF</a>
-                            <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a>
-                            <button class="paper-link bib" onclick="copyBib_4()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-                <article class="paper-card journal" data-title="Somnolencia Distracción SOMN_IA Drowsiness Distraction">
-                    <div class="paper-info">
-                        <span class="paper-venue">Información tecnológica · 2023</span>
-                        <h3>Detección de somnolencia y distracción en conductores y su implementación en dispositivos móviles</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_5.pdf" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_5()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card conference" data-title="Face Expression Emociones Animo">
-                    <div class="paper-info">
-                        <span class="paper-venue">IEEE Xplorer · 2023</span>
-                        <h3>Face Expression Recognition using Recurrent Neural Networks</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="https://ieeexplore-ieee-org.bibliotecaipn.idm.oclc.org/document/10197740" class="paper-link pdf">PDF</a>
-                            <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a>
-                            <button class="paper-link bib" onclick="copyBib_6()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card journal" data-title="Detección Emociones Animo">
-                    <div class="paper-info">
-                        <span class="paper-venue">Pädi · 2022</span>
-                        <h3>Detección de estados de ánimo en ambientes no restringidos</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_7.pdf" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_7()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card journal" data-title="Drowsiness Distraction SOMN_IA Somnolencia Distracción">
-                    <div class="paper-info">
-                        <span class="paper-venue">Electronics · 2022</span>
-                        <h3>SOMN_IA: Portable and universal device for real-time detection of driver’s drowsiness and distraction levels</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="pdfPapers/Paper_8.pdf" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_8()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card conference" data-title="Drowsiness SOMN_IA Somnolencia">
-                    <div class="paper-info">
-                        <span class="paper-venue">Springer · 2022</span>
-                        <h3>A CNN-based driver’s drowsiness and distraction detection system</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-07750-0_8" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_9()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card book" data-title="Drowsiness SOMN_IA Somnolencia">
-                    <div class="paper-info">
-                        <span class="paper-venue">IOS Press · 2022</span>
-                        <h3>Implementation of a CNN-Based Driver Drowsiness and Distraction Detector in Mobile Devices</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="https://ebooks.iospress.nl/doi/10.3233/FAIA220258" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_10()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-                <article class="paper-card conference" data-title="Drowsiness SOMN_IA Somnolencia">
-                    <div class="paper-info">
-                        <span class="paper-venue">IEEE Xplorer · 2021</span>
-                        <h3>Visual-based real time driver drowsiness detection system using CNN</h3>
-                        <p>Propuesta de un framework end-to-end diseñado para entornos de baja iluminación utilizando grafos de atención.</p>
-                        <div class="paper-actions">
-                            <a href="https://ieeexplore.ieee.org/abstract/document/9633082" class="paper-link pdf">PDF</a>
-                            <!-- <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" class="paper-link code">Code</a> -->
-                            <button class="paper-link bib" onclick="copyBib_11()">BibTeX</button>
-                        </div>
-                    </div>
-                    <div class="paper-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">SOTA</span>
-                            <span class="stat-label">Model</span>
-                        </div>
-                    </div>
-                </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-        </section>
-
-
-    <section id="db-section" class="db-preview">
-        <h2>Custom Dataset Development</h2>
-        <p>Curación de 500+ horas de video para anomalías en transporte público mexicano.</p>
-        <div class="db-grid">
-            <div class="db-item">Sample 1</div>
-            <div class="db-item">Sample 2</div>
-            <div class="db-item">Sample 3</div>
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="papers" class="section r-papers">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 class="section-title" data-i18n="r.pubs.title">Scientific publications</h2>
+          <p class="section-lead" data-i18n="r.pubs.sub">Peer-reviewed work in Computer Vision, anomaly detection and intelligent systems.</p>
+        </header>
+
+        <div class="papers-controls reveal">
+          <input type="text" id="paperSearch" data-i18n-attr="placeholder:r.search.placeholder" placeholder="Search by topic…" aria-label="Search publications" />
+          <div class="filter-tags" id="filterTags">
+            <button class="tag is-active" data-filter="all" data-i18n="r.filter.all">All</button>
+            <button class="tag" data-filter="journal" data-i18n="r.filter.journal">Journals</button>
+            <button class="tag" data-filter="conference" data-i18n="r.filter.conference">Conferences</button>
+            <button class="tag" data-filter="book" data-i18n="r.filter.book">Books &amp; chapters</button>
+          </div>
         </div>
+
+        <div class="papers-list" id="papersContainer"><!-- rendered by research.js --></div>
+      </div>
     </section>
 
+    <!-- ============ DATABASES ============ -->
+    <section id="db-section" class="section section--paper-2 r-db">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="r.db.title">Custom dataset development</h2>
+        <p class="section-lead reveal" data-i18n="r.db.text">Curation of 500+ hours of video for anomaly detection in Mexican public transportation.</p>
+        <div class="db-grid reveal">
+          <!-- TODO: replace with real dataset samples / thumbnails -->
+          <div class="db-item">Sample 1</div>
+          <div class="db-item">Sample 2</div>
+          <div class="db-item">Sample 3</div>
+        </div>
+      </div>
+    </section>
 
-        <!-- <section id="achievements" class="achievements-section">
-            <h2 class="section-title">Achievements & Recognition</h2>
-            
-            <div class="achievement-grid">
-                <div class="achievement-card">
-                    <span class="icon">🏆</span> <h3>Future Award: [Nombre de la Presea]</h3>
-                    <p>Preparándome para competir por la prestigiosa presea, reflejando la innovación en IA aplicada.</p>
-                    <span class="status coming-soon">Goal for 202X</span>
-                </div>
+    <!-- ============ AWARDS ============ -->
+    <section id="awards" class="section section--dark r-awards">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="r.awards.title">Awards &amp; honors</h2>
+        <div class="awards-list" id="awardsContainer"><!-- rendered by research.js --></div>
+      </div>
+    </section>
+  </main>
 
-                <div class="achievement-card">
-                    <span class="icon">💡</span> <h3>Patent Granted: [Nombre de la Patente 1]</h3>
-                    <p>Método novedoso para la detección temprana de anomalías en redes de transporte público.</p>
-                    <span class="status granted">Granted 2023</span>
-                </div>
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">Applied AI Researcher</span></p>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" target="_blank" rel="noopener">Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0002-2467-3600" target="_blank" rel="noopener">ORCID</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+      </ul>
+    </div>
+  </footer>
 
-                <div class="achievement-card">
-                    <span class="icon">📝</span> <h3>Patent Pending: [Nombre de la Patente 2]</h3>
-                    <p>Arquitectura optimizada para procesamiento de video en tiempo real en dispositivos Edge AI.</p>
-                    <span class="status pending">Pending Review</span>
-                </div>
-                
-                </div>
-        </section> -->
-
-
-        <section id="awards" class="awards-section">
-            <h2 class="section-title">Awards & Honors</h2>
-            <div class="awards-container">
-
-                <div class="award-item highlight">
-                    <div class="award-date">2027</div>
-                    <div class="award-info">
-                        <h3>[Nombre de la Presea]</h3>
-                        <p>Candidato/Finalista por impacto tecnológico en la Ciudad de México.</p>
-                        <span class="badge-gold">En Proceso</span>
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">2027</div>
-                    <div class="award-info">
-                        <h3>Mención Honorífica - PhD Defense</h3>
-                        <p>Reconocimiento a la excelencia académica y aporte científico en el área de Computer Vision.</p>
-                    </div>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-date">2026</div>
-                    <div class="award-info">
-                        <h3>Best Research Proposal</h3>
-                        <p>Otorgado por [Institución/Conferencia] por la innovación en modelos GNN para transporte público.</p>
-                        <a href="gallery.html#gallery" class="view-photo">Ver en Galería →</a>
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">2024</div>
-                    <div class="award-info">
-                        <h3>MEjor de la Generacion de intergacion MExico-JApon</h3>
-                        <p>Otorgado por [Institución/Conferencia] por la innovación en modelos GNN para transporte público.</p>
-                        <a href="gallery.html#gallery" class="view-photo">Ver en Galería →</a>
-                    </div>
-                </div>
-
-            
-                <div class="award-item">
-                    <div class="award-date">2022</div>
-                    <div class="award-info">
-                        <h3>Mención Honorífica - MsC Defense</h3>
-                        <p>Reconocimiento a la excelencia académica y aporte científico en el área de Computer Vision.</p>
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">2022</div>
-                    <div class="award-info">
-                        <h3>Patente</h3>
-                        <p>Reconocimiento a la excelencia académica y aporte científico en el área de Computer Vision.</p>
-                    </div>
-                </div>
-
-                
-
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Jonathan Flores Monroy - Applied AI Researcher</p>
-        </footer>
-
-        <script src="research.js"></script>
-
-    </body>
-</html>
-
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/research.js"></script>
 </body>
 </html>
