@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Research by Jonathan Flores Monroy — Video Anomaly Detection, graph-based and temporal deep learning, publications and datasets." />
+  <meta name="description" content="Research by Jonathan Flores Monroy — online video anomaly detection, classification and localization on edge devices: publications, current work and datasets." />
   <title>Jonathan Flores Monroy · Research</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,7 @@
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="index.html#about" data-i18n="nav.about">About</a>
       <a href="research.html" data-i18n="nav.research">Research</a>
+      <a href="#current" data-i18n="r.qn.current">Current work</a>
       <a href="#papers" data-i18n="nav.publications">Publications</a>
       <a href="models.html" data-i18n="nav.models">Models</a>
       <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
@@ -44,7 +45,7 @@
         </video>
         <div class="r-hero-overlay">
           <h1 class="font-serif" data-i18n="r.hero.title">Video Anomaly Detection</h1>
-          <p data-i18n="r.hero.sub">Advancing real-time safety through graph-based and temporal modeling.</p>
+          <p data-i18n="r.hero.sub">Online detection, classification and localization of anomalous events — built to run on edge devices.</p>
         </div>
       </div>
     </section>
@@ -53,7 +54,7 @@
     <section class="r-objective">
       <div class="container">
         <p class="reveal" data-i18n="r.objective">
-          My research focuses on deep-learning architectures that model complex behavior in dynamic environments, balancing accuracy with computational efficiency.
+          My research asks a practical question: can a camera tell us, in real time, when something abnormal happens, where it happens and what it is — on hardware small enough to live inside a bus or a station? Each paper below answers part of it.
         </p>
       </div>
     </section>
@@ -61,17 +62,21 @@
     <!-- ============ QUICK NAV ============ -->
     <section class="r-quicknav">
       <div class="container quicknav-grid">
-        <a href="#latest-results" class="quick-card reveal">
-          <h3 data-i18n="r.qn.results">Latest results</h3>
-          <span data-i18n="r.qn.results.sub">State-of-the-art metrics</span>
+        <a href="#line" class="quick-card reveal">
+          <h3 data-i18n="r.qn.line">Research line</h3>
+          <span data-i18n="r.qn.line.sub">From backbones to edge systems</span>
+        </a>
+        <a href="#current" class="quick-card reveal">
+          <h3 data-i18n="r.qn.current">Current work</h3>
+          <span data-i18n="r.qn.current.sub">GA-VAD · in preparation</span>
         </a>
         <a href="#papers" class="quick-card reveal">
           <h3 data-i18n="r.qn.pubs">Publications</h3>
           <span data-i18n="r.qn.pubs.sub">Full archive</span>
         </a>
         <a href="#db-section" class="quick-card reveal">
-          <h3 data-i18n="r.qn.db">Databases</h3>
-          <span data-i18n="r.qn.db.sub">Custom datasets</span>
+          <h3 data-i18n="r.qn.db">Dataset</h3>
+          <span data-i18n="r.qn.db.sub">Trans-IPN</span>
         </a>
         <a href="#awards" class="quick-card reveal">
           <h3 data-i18n="r.qn.awards">Achievements</h3>
@@ -80,29 +85,106 @@
       </div>
     </section>
 
-    <!-- ============ LATEST RESULTS ============ -->
+    <!-- ============ RESEARCH LINE ============ -->
+    <section id="line" class="section r-line">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="r.line.eyebrow">Research line</span>
+          <h2 class="section-title" data-i18n="r.line.title">How the work has evolved</h2>
+          <p class="section-lead" data-i18n="r.line.lead">Every step adds one capability while keeping the system online and efficient enough for the edge.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-step reveal">
+            <span class="tl-tag" data-i18n="r.line.s1.tag">2024 · IOS Press</span>
+            <h3 data-i18n="r.line.s1.title">Choosing the right backbone</h3>
+            <p data-i18n="r.line.s1.text"></p>
+            <ul class="tl-metrics"><li data-i18n="r.line.s1.m1">79.74% AUC</li><li data-i18n="r.line.s1.m2">4.64 clips/s on Jetson</li></ul>
+          </li>
+          <li class="tl-step reveal">
+            <span class="tl-tag" data-i18n="r.line.s2.tag">2025 · Applied Sciences (MDPI)</span>
+            <h3 data-i18n="r.line.s2.title">From detection to classification</h3>
+            <p data-i18n="r.line.s2.text"></p>
+            <ul class="tl-metrics"><li data-i18n="r.line.s2.m1">74.77% clip-level accuracy</li><li data-i18n="r.line.s2.m2">58.96% video-level accuracy</li></ul>
+          </li>
+          <li class="tl-step reveal">
+            <span class="tl-tag" data-i18n="r.line.s3.tag">2025 · IEEE</span>
+            <h3 data-i18n="r.line.s3.title">Running on the edge</h3>
+            <p data-i18n="r.line.s3.text"></p>
+            <ul class="tl-metrics"><li data-i18n="r.line.s3.m1">80.0% AUC</li><li data-i18n="r.line.s3.m2">283.49 FPS on Jetson Orin NX</li></ul>
+          </li>
+          <li class="tl-step reveal">
+            <span class="tl-tag" data-i18n="r.line.s4.tag">2026 · Engineering Proceedings (MDPI)</span>
+            <h3 data-i18n="r.line.s4.title">TransLowNet: when, what and where</h3>
+            <p data-i18n="r.line.s4.text"></p>
+            <ul class="tl-metrics"><li data-i18n="r.line.s4.m1">80.0% AUC · 54.5% accuracy</li><li data-i18n="r.line.s4.m2">20.3% mAP@0.5 localization</li></ul>
+          </li>
+          <li class="tl-step tl-step--pending reveal">
+            <span class="tl-tag" data-i18n="r.line.s5.tag">Under review</span>
+            <h3 data-i18n="r.line.s5.title">Learning from noisy labels</h3>
+            <p data-i18n="r.line.s5.text"></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DEEP DIVE ============ -->
     <section id="latest-results" class="section r-results">
       <div class="container">
         <h2 class="section-title reveal" data-i18n="r.results.title">Deep dive: TransLowNet</h2>
 
         <div class="research-row reveal">
           <div class="res-text">
-            <h3 data-i18n="r.results.r1.title">Efficiency in low light</h3>
-            <p data-i18n="r.results.r1.text">Using X3D as backbone, we reduced false positives in night-time scenarios by 15% versus conventional models.</p>
+            <h3 data-i18n="r.results.r1.title">One stream, three answers</h3>
+            <p data-i18n="r.results.r1.text"></p>
           </div>
-          <div class="res-visual"><img src="figuresPapers/fig1.png" alt="Accuracy chart" /></div>
+          <div class="res-visual"><img src="figuresPapers/fig1.png" alt="TransLowNet online inference and training pipeline" loading="lazy" /></div>
         </div>
 
         <div class="research-row reverse reveal">
           <div class="res-text">
-            <h3 data-i18n="r.results.r2.title">Graph-attention architecture</h3>
-            <p data-i18n="r.results.r2.text">Graph Attention Networks capture relationships between multiple actors in the scene, improving violence-event detection.</p>
+            <h3 data-i18n="r.results.r2.title">Built for constrained hardware</h3>
+            <p data-i18n="r.results.r2.text"></p>
           </div>
-          <div class="res-visual"><img src="figuresPapers/fig2.png" alt="Neural network diagram" /></div>
+          <div class="res-visual"><img src="figuresPapers/fig3.png" alt="Throughput (FPS) of UniFormer-S, I3D, X3D-M and X3D-S on Jetson Orin NX" loading="lazy" /></div>
         </div>
 
         <div class="r-results-cta reveal">
-          <a href="https://www.mdpi.com/2076-3417/15/17/9249" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="r.results.cta">Read the full paper (MDPI)</a>
+          <a href="https://www.mdpi.com/2076-3417/15/17/9249" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="r.results.cta">Read the paper (Applied Sciences)</a>
+          <a href="https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="r.results.code">Source code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURRENT RESEARCH ============ -->
+    <section id="current" class="section section--paper-2 r-current">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="r.cur.eyebrow">Current research · Paper in preparation</span>
+          <h2 class="section-title" data-i18n="r.cur.title">GA-VAD: when, where and what — in a single online pass</h2>
+          <p class="section-lead" data-i18n="r.cur.lead"></p>
+        </header>
+
+        <div class="cur-grid">
+          <article class="cur-card reveal">
+            <i data-lucide="timer"></i>
+            <h3 data-i18n="r.cur.when">When</h3>
+            <p data-i18n="r.cur.when.text"></p>
+          </article>
+          <article class="cur-card reveal">
+            <i data-lucide="scan"></i>
+            <h3 data-i18n="r.cur.where">Where</h3>
+            <p data-i18n="r.cur.where.text"></p>
+          </article>
+          <article class="cur-card reveal">
+            <i data-lucide="tags"></i>
+            <h3 data-i18n="r.cur.what">What</h3>
+            <p data-i18n="r.cur.what.text"></p>
+          </article>
+        </div>
+        <p class="cur-note reveal" data-i18n="r.cur.note"></p>
+        <div class="r-results-cta cur-cta reveal">
+          <a href="ga-vad.html" class="btn btn--primary"><span data-i18n="r.cur.cta">Explore GA-VAD: demos, tables and architecture</span><span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -122,6 +204,8 @@
             <button class="tag" data-filter="journal" data-i18n="r.filter.journal">Journals</button>
             <button class="tag" data-filter="conference" data-i18n="r.filter.conference">Conferences</button>
             <button class="tag" data-filter="book" data-i18n="r.filter.book">Books &amp; chapters</button>
+            <button class="tag" data-filter="review" data-i18n="r.filter.review">Under review</button>
+            <button class="tag" data-filter="thesis" data-i18n="r.filter.thesis">Thesis</button>
           </div>
         </div>
 
@@ -129,17 +213,27 @@
       </div>
     </section>
 
-    <!-- ============ DATABASES ============ -->
+    <!-- ============ DATASET ============ -->
     <section id="db-section" class="section section--paper-2 r-db">
       <div class="container">
-        <h2 class="section-title reveal" data-i18n="r.db.title">Custom dataset development</h2>
-        <p class="section-lead reveal" data-i18n="r.db.text">Curation of 500+ hours of video for anomaly detection in Mexican public transportation.</p>
-        <div class="db-grid reveal">
-          <!-- TODO: replace with real dataset samples / thumbnails -->
-          <div class="db-item">Sample 1</div>
-          <div class="db-item">Sample 2</div>
-          <div class="db-item">Sample 3</div>
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="r.db.eyebrow">Data</span>
+          <h2 class="section-title" data-i18n="r.db.title">Trans-IPN: anomalies in public transportation</h2>
+          <p class="section-lead" data-i18n="r.db.text"></p>
+        </header>
+
+        <div class="db-card reveal">
+          <div class="db-stats">
+            <div class="db-stat"><strong>426</strong><span data-i18n="r.db.videos">videos</span></div>
+            <div class="db-stat"><strong>4</strong><span data-i18n="r.db.classes">anomaly classes</span></div>
+            <div class="db-stat"><strong>6.9 GB</strong><span data-i18n="r.db.size">of video</span></div>
+          </div>
+          <div class="db-dist">
+            <h3 data-i18n="r.db.dist">Videos per class</h3>
+            <ul class="db-bars" id="dbBars"><!-- rendered by research.js --></ul>
+          </div>
         </div>
+        <p class="db-privacy reveal"><i data-lucide="shield-check"></i><span data-i18n="r.db.privacy"></span></p>
       </div>
     </section>
 
@@ -155,7 +249,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">Applied AI Researcher</span></p>
+      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">AI Researcher &amp; Engineer</span></p>
       <ul class="footer-links">
         <li><a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" target="_blank" rel="noopener">Scholar</a></li>
         <li><a href="https://orcid.org/0000-0002-2467-3600" target="_blank" rel="noopener">ORCID</a></li>
@@ -164,7 +258,7 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/research.js"></script>
