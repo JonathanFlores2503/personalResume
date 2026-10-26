@@ -8,6 +8,27 @@
   /* ---------------- Publications ---------------- */
   const PAPERS = [
     {
+      type: "review",
+      venue: "Signal Processing: Image Communication (Elsevier) · Under review",
+      title: "Video Anomaly Detection in Surveillance Systems: A Systematic Literature Review and Bibliometric Analysis",
+      keywords: "survey systematic review bibliometric prisma vad surveillance elsevier",
+      links: {},
+    },
+    {
+      type: "review",
+      venue: "Under review · 2026",
+      title: "Heuristic-Guided Representation Learning for Online Weakly-Supervised Video Anomaly Detection",
+      keywords: "heuristic pseudo-labels weakly supervised videomae triplet online vad",
+      links: {},
+    },
+    {
+      type: "conference",
+      venue: "Engineering Proceedings (MDPI) · 2026",
+      title: "TransLowNet: An Online Framework for Video Anomaly Detection, Classification, and Localization",
+      keywords: "translownet online detection classification localization x3d mog2 summer school cybersecurity",
+      links: { pdf: "pdfPapers/Paper_9.pdf", code: "https://github.com/JonathanFlores2503/TransLowNet_V2" },
+    },
+    {
       type: "conference",
       venue: "IEEE Xplore · 2025",
       title: "Detection and Classification of Abnormal Human Actions for Video Surveillance on Edge Devices",
@@ -17,8 +38,8 @@
     {
       type: "journal",
       venue: "Applied Sciences (MDPI) · 2025",
-      title: "TransLowNet: An Online Modular Framework for Anomaly Detection in Public Transportation",
-      keywords: "translownet anomaly detection vad var mdpi modular",
+      title: "An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance",
+      keywords: "translownet anomaly detection classification vad var mdpi modular online",
       links: { pdf: "pdfPapers/Paper_2.pdf", url: "https://www.mdpi.com/2076-3417/15/17/9249", code: "https://github.com/JonathanFlores2503/TransLowNET_FinalVersion" },
       bib: `@article{flores2025online,
   title={An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance},
@@ -126,6 +147,13 @@
 }`,
     },
     {
+      type: "thesis",
+      venue: "MSc Thesis · IPN ESIME Culhuacán · 2022",
+      title: "SOMN_IA: Sistema Inteligente para Detectar la Somnolencia y Distracción en Conductores",
+      keywords: "somn_ia thesis tesis maestria drowsiness distraction somnolencia",
+      links: { pdf: "pdfPapers/Thesis_MSc_SOMN_IA.pdf" },
+    },
+    {
       type: "conference",
       venue: "IEEE Xplore · 2021",
       title: "Visual-based real time driver drowsiness detection system using CNN",
@@ -140,7 +168,7 @@
     },
   ];
 
-  /* ---------------- Awards (TODO: complete real titles) ---------------- */
+  /* ---------------- Awards ---------------- */
   const AWARDS = [
     { year: "2024", title: { en: "Best of the Generation — Mexico–Japan Integration", es: "Mejor de la Generación — Integración México–Japón" },
       text: { en: "Recognition for academic and research performance during the research stay in Japan.", es: "Reconocimiento al desempeño académico y de investigación durante la estancia en Japón." } },
@@ -148,16 +176,23 @@
       text: { en: "Awarded for academic excellence and scientific contribution in Computer Vision.", es: "Otorgada por excelencia académica y aporte científico en Visión por Computadora." } },
     { year: "2022", title: { en: "Patent — Portable AI-Based Driver Monitoring System (MX/a/2022/015919)", es: "Patente — Sistema portátil de monitoreo del conductor basado en IA (MX/a/2022/015919)" },
       text: { en: "Industrial property registration before IMPI (Mexico).", es: "Registro de propiedad industrial ante el IMPI (México)." } },
-    // TODO: add / verify the remaining awards below before publishing.
-    { year: "2027", title: { en: "TODO: award name", es: "TODO: nombre del premio" }, todo: true,
-      text: { en: "TODO: short description and status.", es: "TODO: descripción breve y estatus." } },
+  ];
+
+  /* ---------------- Trans-IPN dataset (labels.csv / metadata.json) ---------------- */
+  const DATASET = [
+    { name: { en: "Stealing", es: "Robo" }, n: 178 },
+    { name: { en: "Fight", es: "Pelea" }, n: 146 },
+    { name: { en: "Robbery", es: "Asalto" }, n: 70 },
+    { name: { en: "Shooting", es: "Disparo" }, n: 29 },
+    { key: "r.db.mixed", n: 3 },
   ];
 
   document.addEventListener("DOMContentLoaded", () => {
     renderPapers();
     renderAwards();
+    renderDataset();
     initControls();
-    document.addEventListener("langchange", () => { renderPapers(); renderAwards(); applyFilters(); });
+    document.addEventListener("langchange", () => { renderPapers(); renderAwards(); renderDataset(); applyFilters(); });
   });
 
   function L() { return window.i18n ? window.i18n.lang : "en"; }
@@ -169,7 +204,7 @@
     if (!box) return;
 
     box.innerHTML = PAPERS.map((p, i) => {
-      const primary = p.links.url || p.links.pdf || "#";
+      const primary = p.links.url || p.links.pdf;
       const actions = [];
       if (p.links.pdf) actions.push(`<a class="paper-link pdf" href="${p.links.pdf}" target="_blank" rel="noopener">${t("r.paper.pdf")}</a>`);
       else if (p.links.url) actions.push(`<a class="paper-link pdf" href="${p.links.url}" target="_blank" rel="noopener">${t("r.paper.pdf")}</a>`);
@@ -180,7 +215,7 @@
         <article class="paper-card" data-type="${p.type}" data-keywords="${p.keywords}">
           <div class="paper-info">
             <span class="paper-venue">${p.venue}</span>
-            <h3><a href="${primary}" target="_blank" rel="noopener">${p.title}</a></h3>
+            <h3>${primary ? `<a href="${primary}" target="_blank" rel="noopener">${p.title}</a>` : p.title}</h3>
             <div class="paper-actions">${actions.join("")}</div>
           </div>
           <div class="paper-type"><span class="type-badge type-${p.type}">${t("r.filter." + p.type)}</span></div>
@@ -205,6 +240,20 @@
           <p>${a.text[lang] || a.text.en}</p>
         </div>
       </div>`).join("");
+  }
+
+  /* ---------------- Render dataset distribution ---------------- */
+  function renderDataset() {
+    const box = document.getElementById("dbBars");
+    if (!box) return;
+    const lang = L();
+    const max = Math.max(...DATASET.map((d) => d.n));
+    box.innerHTML = DATASET.map((d) => `
+      <li>
+        <span class="db-bar-label">${d.key ? t(d.key) : d.name[lang] || d.name.en}</span>
+        <span class="db-bar-track"><span class="db-bar-fill" style="width:${(d.n / max) * 100}%"></span></span>
+        <span class="db-bar-value">${d.n}</span>
+      </li>`).join("");
   }
 
   /* ---------------- Search + filter ---------------- */

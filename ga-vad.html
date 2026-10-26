@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GA-VAD — online, weakly supervised video anomaly detection, localization and recognition on edge devices. Doctoral research by Jonathan Flores Monroy." />
+  <title>GA-VAD · Jonathan Flores Monroy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/research.css" />
+  <link rel="stylesheet" href="css/ga-vad.css" />
+</head>
+<body class="theme-dark">
+
+  <!-- ============ NAV ============ -->
+  <header class="site-nav">
+    <a class="brand" href="index.html">Jonathan Flores <span>PhD · AI</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="research.html" data-i18n="nav.research">Research</a>
+      <a href="#demos" data-i18n="ga.nav.demos">Demos</a>
+      <a href="#architecture" data-i18n="ga.nav.arch">Architecture</a>
+      <a href="#results" data-i18n="ga.nav.results">Results</a>
+      <a href="#edge" data-i18n="ga.nav.edge">Edge</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <i data-lucide="languages"></i><span class="lang-current">ES</span>
+      </button>
+      <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navLinks" data-i18n-attr="aria-label:nav.menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="ga-hero">
+      <div class="container">
+        <a class="back-link" href="research.html#current"><span class="arrow">←</span> <span data-i18n="ga.back">Back to research</span></a>
+        <span class="eyebrow" data-i18n="ga.eyebrow">Doctoral research · Paper in preparation</span>
+        <h1 class="font-serif">GA-VAD</h1>
+        <p class="ga-subtitle" data-i18n="ga.subtitle">Online Weakly Supervised Detection, Localization and Recognition of Video Anomalies on Edge Devices</p>
+        <p class="ga-lead" data-i18n="ga.lead"></p>
+
+        <div class="ga-kpis">
+          <div class="ga-kpi"><strong>86.8</strong><span data-i18n="ga.kpi.auc">AUC on UCF-Crime (Pro, 3 seeds)</span></div>
+          <div class="ga-kpi"><strong>+11.8</strong><span data-i18n="ga.kpi.tiou">TIoU over a trivial box (Edge)</span></div>
+          <div class="ga-kpi"><strong>2.0 M</strong><span data-i18n="ga.kpi.params">parameters · 10.3 ms per clip (Edge)</span></div>
+          <div class="ga-kpi"><strong>~30 k</strong><span data-i18n="ga.kpi.head">parameters in the attention head</span></div>
+        </div>
+        <p class="ga-prelim"><i data-lucide="flask-conical"></i><span data-i18n="ga.prelim"></span></p>
+      </div>
+    </section>
+
+    <!-- ============ IDEA ============ -->
+    <section class="section ga-idea">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.idea.eyebrow">The idea</span>
+          <h2 class="section-title" data-i18n="ga.idea.title">Three questions, one forward pass</h2>
+        </header>
+        <div class="cur-grid ga-idea-grid">
+          <article class="ga-q reveal">
+            <span class="ga-q-n">01</span>
+            <h3 data-i18n="r.cur.when">When</h3>
+            <p data-i18n="ga.idea.when"></p>
+          </article>
+          <article class="ga-q reveal">
+            <span class="ga-q-n">02</span>
+            <h3 data-i18n="r.cur.where">Where</h3>
+            <p data-i18n="ga.idea.where"></p>
+          </article>
+          <article class="ga-q reveal">
+            <span class="ga-q-n">03</span>
+            <h3 data-i18n="r.cur.what">What</h3>
+            <p data-i18n="ga.idea.what"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEMOS ============ -->
+    <section id="demos" class="section section--paper-2 ga-demos">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.demos.eyebrow">See it working</span>
+          <h2 class="section-title" data-i18n="ga.demos.title">GA-VAD-Edge on UCF-Crime test videos</h2>
+          <p class="section-lead" data-i18n="ga.demos.lead"></p>
+        </header>
+
+        <div class="ga-video-grid">
+          <figure class="ga-video reveal">
+            <video src="videos/ga-vad/fighting003.mp4" poster="videos/ga-vad/fighting003.jpg" muted loop playsinline controls preload="none"></video>
+            <figcaption><strong data-i18n="ga.demo1.t">Fight · subway station</strong><span data-i18n="ga.demo1.d"></span></figcaption>
+          </figure>
+          <figure class="ga-video reveal">
+            <video src="videos/ga-vad/assault006.mp4" poster="videos/ga-vad/assault006.jpg" muted loop playsinline controls preload="none"></video>
+            <figcaption><strong data-i18n="ga.demo2.t">Assault · store entrance</strong><span data-i18n="ga.demo2.d"></span></figcaption>
+          </figure>
+          <figure class="ga-video reveal">
+            <video src="videos/ga-vad/burglary005.mp4" poster="videos/ga-vad/burglary005.jpg" muted loop playsinline controls preload="none"></video>
+            <figcaption><strong data-i18n="ga.demo3.t">Burglary · house front</strong><span data-i18n="ga.demo3.d"></span></figcaption>
+          </figure>
+        </div>
+        <p class="ga-legend" data-i18n="ga.demos.legend"></p>
+      </div>
+    </section>
+
+    <!-- ============ ARCHITECTURE ============ -->
+    <section id="architecture" class="section ga-arch">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.arch.eyebrow">Architecture · inference</span>
+          <h2 class="section-title" data-i18n="ga.arch.title">From the camera to “when, where and what”</h2>
+          <p class="section-lead" data-i18n="ga.arch.lead"></p>
+        </header>
+
+        <ol class="ga-flow reveal">
+          <li class="ga-node">
+            <span class="ga-node-n">1</span>
+            <h3 data-i18n="ga.f1.t">Last 6.4 s</h3>
+            <p data-i18n="ga.f1.d"></p>
+          </li>
+          <li class="ga-node">
+            <span class="ga-node-n">2</span>
+            <h3 data-i18n="ga.f2.t">Video backbone</h3>
+            <p data-i18n="ga.f2.d"></p>
+          </li>
+          <li class="ga-node">
+            <span class="ga-node-n">3</span>
+            <h3 data-i18n="ga.f3.t">Feature map 7 × 7</h3>
+            <p data-i18n="ga.f3.d"></p>
+          </li>
+          <li class="ga-node ga-node--accent">
+            <span class="ga-node-n">4</span>
+            <h3 data-i18n="ga.f4.t">Guided attention head</h3>
+            <p data-i18n="ga.f4.d"></p>
+          </li>
+          <li class="ga-node">
+            <span class="ga-node-n">5</span>
+            <h3 data-i18n="ga.f5.t">Three answers</h3>
+            <p data-i18n="ga.f5.d"></p>
+          </li>
+        </ol>
+
+        <figure class="ga-figure reveal">
+          <img src="figuresPapers/ga-vad/01_ventana.png" alt="32 input frames spanning the last 6.4 seconds" loading="lazy" />
+          <figcaption data-i18n="ga.fig.window"></figcaption>
+        </figure>
+
+        <div class="ga-table-wrap reveal">
+          <table class="ga-table">
+            <caption data-i18n="ga.tab.comp.cap">Components of the two variants</caption>
+            <thead>
+              <tr><th data-i18n="ga.tab.block">Block</th><th>GA-VAD-Edge</th><th>GA-VAD-Pro</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="ga.tab.backbone">Backbone</td><td data-i18n="ga.tab.bb.edge">X3D-M (Kinetics-400), frozen · 2.0 M</td><td data-i18n="ga.tab.bb.pro">UniFormer-B 32×4 (K600), last stage fine-tuned · 49.9 M</td></tr>
+              <tr><td data-i18n="ga.tab.features">Feature map F</td><td>192 × 7 × 7</td><td>512 × 7 × 7</td></tr>
+              <tr><td data-i18n="ga.tab.attn">Attention</td><td colspan="2" data-i18n="ga.tab.attn.d">BatchNorm → 1×1 conv → softmax over 49 cells → weighted pooling Σ aᵢ·Fᵢ</td></tr>
+              <tr><td data-i18n="ga.tab.det">Detection</td><td colspan="2">Linear(C → 128) + LayerNorm → MLP 128 → 32 → 1 → σ</td></tr>
+              <tr><td data-i18n="ga.tab.cls">Classification</td><td colspan="2" data-i18n="ga.tab.cls.d">128 → K with sigmoids (13 classes on UCF-Crime, 6 multi-label on XD-Violence)</td></tr>
+              <tr><td data-i18n="ga.tab.box">Box</td><td colspan="2" data-i18n="ga.tab.box.d">Connected region of the attention map around its peak, projected to the full frame</td></tr>
+              <tr><td data-i18n="ga.tab.head">Head parameters</td><td>29,698</td><td>71,618</td></tr>
+              <tr><td data-i18n="ga.tab.lat">Latency per clip</td><td>10.3 ms (RTX 4060 Ti, FP16)</td><td>78.8 ms</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRAINING ============ -->
+    <section class="section section--paper-2 ga-train">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.train.eyebrow">Training · weak supervision</span>
+          <h2 class="section-title" data-i18n="ga.train.title">Learning to look without a single box</h2>
+          <p class="section-lead" data-i18n="ga.train.lead"></p>
+        </header>
+
+        <ol class="ga-steps reveal">
+          <li><strong data-i18n="ga.s1.t">Teacher</strong><span data-i18n="ga.s1.d"></span></li>
+          <li><strong data-i18n="ga.s2.t">Three pseudo-labels</strong><span data-i18n="ga.s2.d"></span></li>
+          <li><strong data-i18n="ga.s3.t">Guided head</strong><span data-i18n="ga.s3.d"></span></li>
+          <li><strong data-i18n="ga.s4.t">Pro only</strong><span data-i18n="ga.s4.d"></span></li>
+        </ol>
+
+        <p class="ga-loss reveal">L = BCE(s, y) + λ · KL(a ‖ g) + μ · Σ<sub>k</sub> BCE(p<sub>k</sub>, c<sub>k</sub>)<span data-i18n="ga.loss.note">λ = 0.5 (KL only on positives)</span></p>
+
+        <div class="ga-fig-row">
+          <figure class="ga-figure ga-figure--light reveal">
+            <img src="figuresPapers/ga-vad/02_cuando.png" alt="Teacher score over a training video and the 20% window used as positives" loading="lazy" />
+            <figcaption data-i18n="ga.fig.when"></figcaption>
+          </figure>
+          <figure class="ga-figure ga-figure--light reveal">
+            <img src="figuresPapers/ga-vad/03_donde.png" alt="Grad-CAM of the teacher turned into a Gaussian guide" loading="lazy" />
+            <figcaption data-i18n="ga.fig.where"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="results" class="section ga-results">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.res.eyebrow">Results so far · UCF-Crime test (290 videos)</span>
+          <h2 class="section-title" data-i18n="ga.res.title">Detection and localization</h2>
+          <p class="section-lead" data-i18n="ga.res.lead"></p>
+        </header>
+
+        <div class="ga-table-wrap reveal">
+          <table class="ga-table ga-table--num">
+            <thead>
+              <tr><th data-i18n="ga.tab.metric">Metric</th><th>GA-VAD-Edge</th><th>GA-VAD-Pro</th><th data-i18n="ga.tab.ref">Reference</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="ga.m.auc">Frame-level AUC</td><td>82.08 ± 0.10</td><td class="is-best">86.76 ± 0.33</td><td>REWARD-E2E 86.94</td></tr>
+              <tr><td data-i18n="ga.m.ap">Frame-level AP</td><td>24.4</td><td class="is-best">33.7</td><td>—</td></tr>
+              <tr><td data-i18n="ga.m.tiou1">TIoU, full frame, no τ</td><td class="is-best">38.88 ± 0.19</td><td>27.5</td><td data-i18n="ga.m.tiou1.ref">“Where and When” 40.51 (offline)</td></tr>
+              <tr><td data-i18n="ga.m.tiou2">TIoU, full frame, τ = 0.5</td><td class="is-best">36.25 ± 0.11</td><td>25.6</td><td>STPrompt 23.90 · VadCLIP 22.05</td></tr>
+              <tr><td data-i18n="ga.m.gain">Gain over a trivial box</td><td class="is-best">+11.8</td><td>+1.2</td><td data-i18n="ga.m.gain.ref">without guidance: +0.7</td></tr>
+              <tr><td data-i18n="ga.m.params">Parameters (backbone + head)</td><td class="is-best">2.03 M</td><td>50.0 M</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p class="ga-table-note" data-i18n="ga.res.note"></p>
+        </div>
+
+        <header class="section-head ga-subhead reveal">
+          <h3 class="ga-h3" data-i18n="ga.bb.title">Backbone comparison (same protocol, 4 seeds)</h3>
+          <p class="section-lead" data-i18n="ga.bb.lead"></p>
+        </header>
+        <div class="ga-table-wrap reveal">
+          <table class="ga-table ga-table--num">
+            <thead>
+              <tr><th>Backbone</th><th data-i18n="ga.tab.params">Params</th><th data-i18n="ga.tab.ms">ms / clip</th><th>UCF AUC</th><th>TIoU</th><th data-i18n="ga.tab.gain">Gain vs trivial box</th><th>XD-Violence AP</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>X3D-M</td><td class="is-best">2.0 M</td><td class="is-best">10.3</td><td>82.08 ± 0.10</td><td class="is-best">38.88</td><td class="is-best">+11.8</td><td>70.66</td></tr>
+              <tr><td>I3D</td><td>12.7 M</td><td>20.7</td><td>80.36 ± 0.50</td><td>36.35</td><td>+8.5</td><td>66.59</td></tr>
+              <tr><td>VideoMAE-B</td><td>86.2 M</td><td>30.8</td><td>81.47 ± 0.23</td><td>27.90</td><td>+1.2</td><td>70.83</td></tr>
+              <tr><td>UniFormer-B</td><td>49.9 M</td><td>78.8</td><td class="is-best">85.02 ± 0.44</td><td>27.54</td><td>+1.2</td><td class="is-best">71.66</td></tr>
+            </tbody>
+          </table>
+          <p class="ga-table-note" data-i18n="ga.bb.note"></p>
+        </div>
+
+        <header class="section-head ga-subhead reveal">
+          <h3 class="ga-h3" data-i18n="ga.att.title">How the attention behaves on test videos</h3>
+          <p class="section-lead" data-i18n="ga.att.lead"></p>
+        </header>
+        <div class="ga-att-list">
+          <figure class="ga-figure ga-figure--light reveal">
+            <img src="figuresPapers/ga-vad/10_test_Fighting.png" alt="Fighting003: GA box vs ground truth, attention map and online score" loading="lazy" />
+            <figcaption data-i18n="ga.att.fight"></figcaption>
+          </figure>
+          <figure class="ga-figure ga-figure--light reveal">
+            <img src="figuresPapers/ga-vad/10_test_Assault.png" alt="Assault006: GA box vs ground truth, attention map and online score" loading="lazy" />
+            <figcaption data-i18n="ga.att.assault"></figcaption>
+          </figure>
+          <figure class="ga-figure ga-figure--light reveal">
+            <img src="figuresPapers/ga-vad/10_test_Burglary.png" alt="Burglary005: GA box vs ground truth, attention map and online score" loading="lazy" />
+            <figcaption data-i18n="ga.att.burglary"></figcaption>
+          </figure>
+          <figure class="ga-figure ga-figure--light ga-figure--fail reveal">
+            <img src="figuresPapers/ga-vad/10_test_Stealing.png" alt="Stealing019: a failure case with two attention foci" loading="lazy" />
+            <figcaption data-i18n="ga.att.fail"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDGE ============ -->
+    <section id="edge" class="section section--paper-2 ga-edge">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.edge.eyebrow">Edge deployment</span>
+          <h2 class="section-title" data-i18n="ga.edge.title">Running on a Jetson Orin NX</h2>
+          <p class="section-lead" data-i18n="ga.edge.lead"></p>
+        </header>
+        <div class="ga-table-wrap ga-table-wrap--light reveal">
+          <table class="ga-table ga-table--num ga-table--light">
+            <thead>
+              <tr><th data-i18n="ga.tab.prec">Precision</th><th data-i18n="ga.tab.calib">Calibration</th><th data-i18n="ga.tab.win">ms / window</th><th>Speed-up</th><th data-i18n="ga.tab.vram">Peak VRAM</th><th data-i18n="ga.tab.fight">Max score, fight</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>FP32</td><td>—</td><td>985</td><td>1.0×</td><td>275 MB</td><td>0.976</td></tr>
+              <tr><td>INT8</td><td data-i18n="ga.edge.int8">61 windows</td><td class="is-best">335</td><td class="is-best">2.9×</td><td class="is-best">186 MB</td><td class="is-bad">0.273</td></tr>
+              <tr><td>FP16</td><td data-i18n="ga.edge.none">not needed</td><td>353</td><td>2.8×</td><td class="is-best">186 MB</td><td class="is-best">0.975</td></tr>
+            </tbody>
+          </table>
+          <p class="ga-table-note" data-i18n="ga.edge.note"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEXT ============ -->
+    <section class="section ga-next">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="ga.next.eyebrow">Before submission</span>
+          <h2 class="section-title" data-i18n="ga.next.title">What is still being measured</h2>
+        </header>
+        <ul class="ga-next-list reveal">
+          <li data-i18n="ga.next.1"></li>
+          <li data-i18n="ga.next.2"></li>
+          <li data-i18n="ga.next.3"></li>
+          <li data-i18n="ga.next.4"></li>
+        </ul>
+        <div class="r-results-cta reveal">
+          <a href="research.html#papers" class="btn btn--primary" data-i18n="ga.cta.pubs">See published work</a>
+          <a href="index.html#contact" class="btn btn--ghost" data-i18n="ga.cta.contact">Discuss this research</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">AI Researcher &amp; Engineer</span></p>
+      <ul class="footer-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="research.html" data-i18n="nav.research">Research</a></li>
+        <li><a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" target="_blank" rel="noopener">Scholar</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ga-vad.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

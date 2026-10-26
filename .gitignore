@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Local preview with Docker (not part of the site)
+Dockerfile
+docker-compose.yml
+.dockerignore
+docker/
+Makefile
