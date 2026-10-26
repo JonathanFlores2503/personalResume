@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Models & demos by Jonathan Flores Monroy — video demonstrations of computer-vision and multimodal AI models, with general overviews." />
+  <title>Jonathan Flores Monroy · Models &amp; Demos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/models.css" />
+</head>
+<body class="theme-dark">
+
+  <!-- ============ NAV ============ -->
+  <header class="site-nav">
+    <a class="brand" href="index.html">Jonathan Flores <span>PhD · AI</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+      <a href="research.html" data-i18n="nav.research">Research</a>
+      <a href="models.html" data-i18n="nav.models">Models</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <i data-lucide="languages"></i><span class="lang-current">ES</span>
+      </button>
+      <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navLinks" data-i18n-attr="aria-label:nav.menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <header class="models-header">
+      <div class="container">
+        <span class="eyebrow" data-i18n="m.eyebrow">Models &amp; demos</span>
+        <h1 class="section-title font-serif" data-i18n="m.title">Models that prove the work</h1>
+        <p class="section-lead" data-i18n="m.lead">Video demos of models I’ve built — with a general overview of what each one does.</p>
+        <p class="models-note"><i data-lucide="shield-check"></i><span data-i18n="m.note">What’s shown here is a general summary of each model.</span></p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="filter-bar" id="modelFilters">
+        <button class="filter-btn is-active" data-filter="all" data-i18n="m.filter.all">All</button>
+        <button class="filter-btn" data-filter="vad" data-i18n="m.filter.vad">Anomaly detection</button>
+        <button class="filter-btn" data-filter="multimodal" data-i18n="m.filter.multimodal">Multimodal &amp; LLMs</button>
+        <button class="filter-btn" data-filter="safety" data-i18n="m.filter.safety">Driver safety</button>
+        <button class="filter-btn" data-filter="behavior" data-i18n="m.filter.behavior">Behavior analysis</button>
+        <button class="filter-btn" data-filter="security" data-i18n="m.filter.security">Image security</button>
+      </div>
+
+      <section class="models-grid" id="modelsGrid" aria-label="Models"><!-- rendered by models.js --></section>
+
+      <p class="models-growing" data-i18n="m.growing">This section keeps growing — new models are added over time.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">Computer Vision Research Lead · AI Engineer</span></p>
+      <ul class="footer-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="research.html" data-i18n="nav.research">Research</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/models.js"></script>
+</body>
+</html>

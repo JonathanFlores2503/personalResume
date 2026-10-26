@@ -1,572 +1,437 @@
-<!DOCTYPE html>
+me avi<!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280, initial-scale=0.38, maximum-scale=0.38, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jonathan Flores Monroy — Computer Vision Research Lead & AI Engineer. PhD candidate in Artificial Intelligence, 12+ international publications on video anomaly detection." />
+  <meta name="author" content="Jonathan Flores Monroy" />
+  <title>Jonathan Flores Monroy · Computer Vision Research Lead & AI Engineer</title>
 
-    <title>Jonathan Flores | AI Researcher</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 
-    <!-- ICONS -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
 </head>
-
 <body>
 
-        <!-- NAVBAR -->
-        <header class="navbar">
-            <div class="left">
-                <button id="menuBtn" class="menu-btn">
-                    <!-- <i data-lucide="menu"></i> -->
-                </button>
-            </div>
+  <!-- ============ INTRO / WELCOME CURTAIN ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-inner">
+      <span class="intro-name font-serif">Jonathan Flores Monroy</span>
+      <span class="intro-line"></span>
+      <span class="intro-role" data-i18n="hero.role">Computer Vision Research Lead &amp; AI Engineer</span>
+    </div>
+  </div>
 
-            <nav class="top-links">
-                <a href="#about">About Me</a>
-                <a href="research.html">Achievements</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="research.html">Research</a>
-                <a href="#contact">Contact</a>
-            </nav>
+  <!-- ============ NAV ============ -->
+  <header class="site-nav">
+    <a class="brand" href="index.html">Jonathan Flores <span>PhD · AI</span></a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="research.html" data-i18n="nav.research">Research</a>
+      <a href="models.html" data-i18n="nav.models">Models</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <i data-lucide="languages"></i><span class="lang-current">ES</span>
+      </button>
+      <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="navLinks" data-i18n-attr="aria-label:nav.menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-media">
+          <div class="carousel" id="heroCarousel" aria-label="Photos">
+            <img src="img_John/img_1.jpg" class="carousel-img is-active" alt="Jonathan Flores" />
+            <img src="img_John/img_2.jpg" class="carousel-img" alt="" />
+            <img src="img_John/img_3.jpg" class="carousel-img" alt="" />
+            <img src="img_John/img_4.jpg" class="carousel-img" alt="" />
+            <img src="img_John/img_5.jpg" class="carousel-img" alt="" />
+          </div>
+          <div class="carousel-dots" id="heroDots" aria-hidden="true"></div>
+        </div>
+
+        <div class="hero-text">
+          <span class="eyebrow hero-tagline" data-i18n="hero.tagline">Teaching machines to protect people</span>
+          <h1 class="hero-name font-serif">
+            <a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" target="_blank" rel="noopener">
+              Jonathan Flores Monroy
+            </a>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            PhD candidate in Artificial Intelligence, specializing in Computer Vision, NLP and Intelligent Systems.
+          </p>
+          <p class="hero-quote" data-i18n="hero.quote">
+            “Technology gains meaning when grounded in human needs.”
+          </p>
+          <div class="hero-actions">
+            <a href="research.html" class="btn btn--primary">
+              <span data-i18n="hero.cta.research">View research</span><span class="arrow">→</span>
+            </a>
+            <a href="#contact" class="btn btn--ghost">
+              <span data-i18n="hero.cta.contact">Get in touch</span><span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="about.eyebrow">About me</span>
+          <h2 class="section-title" data-i18n="about.title">
+            Research, engineering and applied technology to solve real-world problems.
+          </h2>
+          <p class="section-lead" data-i18n="about.lead">
+            AI researcher and engineer working across the full path from scientific research to deployable systems.
+          </p>
         </header>
 
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <i data-lucide="users"></i>
+            <h3 data-i18n="about.card1.title">Research Lead</h3>
+            <p data-i18n="about.card1.desc">Lead a multidisciplinary computer-vision team, directing end-to-end R&amp;D from architecture to production deployment.</p>
+            <div class="about-links">
+              <a href="#projects" data-i18n="about.link.projects">Projects</a>
+              <a href="#papers" data-i18n="about.link.papers">Papers</a>
+            </div>
+          </article>
 
-  
+          <article class="about-card reveal">
+            <i data-lucide="microscope"></i>
+            <h3 data-i18n="about.card2.title">AI Researcher</h3>
+            <p data-i18n="about.card2.desc">PhD research in video anomaly detection and anomalous human-action recognition for public safety.</p>
+            <div class="about-links">
+              <a href="research.html#papers" data-i18n="about.link.papers">Papers</a>
+              <a href="research.html#awards" data-i18n="about.link.patents">Patents</a>
+            </div>
+          </article>
 
+          <article class="about-card reveal">
+            <i data-lucide="server"></i>
+            <h3 data-i18n="about.card3.title">AI Engineer</h3>
+            <p data-i18n="about.card3.desc">Dockerized pipelines, cloud (AWS EC2) and edge deployment of efficient, real-time models.</p>
+            <div class="about-links">
+              <a href="#skills" data-i18n="nav.skills">Skills</a>
+            </div>
+          </article>
 
+          <article class="about-card reveal">
+            <i data-lucide="brain"></i>
+            <h3 data-i18n="about.card4.title">Multimodal &amp; LLMs</h3>
+            <p data-i18n="about.card4.desc">Vision–audio multimodal inference and LLMs for sentiment analysis and behavior understanding.</p>
+            <div class="about-links">
+              <a href="#projects" data-i18n="about.link.projects">Projects</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <!-- OVERLAY MENU -->
-            <div id="overlayMenu" class="overlay">
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section section--dark experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="exp.eyebrow">Career</span>
+          <h2 class="section-title" data-i18n="exp.title">Experience</h2>
+        </header>
 
-                <div class="overlay-panel">
-                    <button id="closeMenu" class="close-btn">
-                        <!-- <i data-lucide="x"></i> -->
-                    </button>
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <h3 data-i18n="exp.cdl.company">Celestial Dynamics Lab</h3>
+            <p class="exp-meta"><span data-i18n="exp.cdl.role">Computer Vision Projects Lead</span> · <span data-i18n="exp.cdl.period">Feb 2026 – Present</span></p>
+            <ul>
+              <li data-i18n="exp.cdl.p1"></li>
+              <li data-i18n="exp.cdl.p2"></li>
+              <li data-i18n="exp.cdl.p3"></li>
+              <li data-i18n="exp.cdl.p4"></li>
+              <li data-i18n="exp.cdl.p5"></li>
+            </ul>
+          </article>
 
-                    <div class="overlay-content">
-                        <h2><i data-lucide="user"></i> About Me</h2>
+          <article class="experience-card reveal">
+            <h3><a class="exp-link" href="https://posgrados.esimecu.ipn.mx/" target="_blank" rel="noopener" data-i18n="exp.ipn.company">Instituto Politécnico Nacional (IPN)</a></h3>
+            <p class="exp-meta">
+              <a class="exp-link" href="https://orcid.org/0000-0002-2467-3600" target="_blank" rel="noopener" data-i18n="exp.ipn.role">AI Researcher</a>
+              · <span data-i18n="exp.ipn.period">Feb 2023 – Present</span>
+            </p>
+            <ul>
+              <li data-i18n="exp.ipn.p1"></li>
+              <li data-i18n="exp.ipn.p2"></li>
+              <li data-i18n="exp.ipn.p3"></li>
+              <li data-i18n="exp.ipn.p4"></li>
+            </ul>
+          </article>
 
-                        <h2><i data-lucide="microscope"></i> Research</h2>
-                        <ul>
-                            <li>Title 1</li>
-                            <li>Title 2</li>
-                        </ul>
+          <article class="experience-card reveal">
+            <h3><a class="exp-link" href="https://www.solera.com" target="_blank" rel="noopener" data-i18n="exp.solera.company">Solera</a></h3>
+            <p class="exp-meta"><span data-i18n="exp.solera.role">Software Development Engineer in Test I</span> · <span data-i18n="exp.solera.period">Aug 2022 – Jan 2023</span></p>
+            <ul>
+              <li data-i18n="exp.solera.p1"></li>
+              <li data-i18n="exp.solera.p2"></li>
+              <li data-i18n="exp.solera.p3"></li>
+            </ul>
+          </article>
+        </div>
 
-                        <h2><i data-lucide="briefcase"></i> Experience</h2>
-                        <ul>
-                            <li>Work 1</li>
-                            <li>Work 2</li>
-                        </ul>
+        <!-- Photo coverflow -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+        <div class="photo-swiper swiper reveal">
+          <div class="swiper-wrapper" id="swiperRandom">
+            <div class="swiper-slide"><img src="img_John/img_6.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_7.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_8.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_9.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_10.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_11.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_12.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_13.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_14.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_15.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_16.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_17.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_18.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_19.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_20.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_21.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_22.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_23.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_24.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img_John/img_25.jpg" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                        <h2><i data-lucide="mail"></i> Contact</h2>
-                    </div>
-                </div>
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section section--paper-2 education">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="edu.eyebrow">Academic path</span>
+          <h2 class="section-title" data-i18n="edu.title">Education</h2>
+        </header>
 
+        <div class="edu-grid">
+          <article class="edu-card reveal">
+            <span class="edu-marker edu-marker--1"><i data-lucide="graduation-cap"></i></span>
+            <div class="edu-body">
+              <h3 data-i18n="edu.phd.title">PhD in Communications &amp; Electronics Engineering (Artificial Intelligence)</h3>
+              <a class="edu-place" href="https://posgrados.esimecu.ipn.mx/" target="_blank" rel="noopener" data-i18n="edu.phd.place">ESIME Culhuacán – IPN · 2023 – 2027</a>
+            </div>
+          </article>
+
+          <article class="edu-card reveal">
+            <span class="edu-marker edu-marker--2"><i data-lucide="school"></i></span>
+            <div class="edu-body">
+              <h3 data-i18n="edu.stay.title">Visiting Research Student</h3>
+              <a class="edu-place" href="https://researchmap.jp/VC_rocky?lang=ja" target="_blank" rel="noopener" data-i18n="edu.stay.place">UEC Tokyo – Japan · 2023 – 2024</a>
+            </div>
+          </article>
+
+          <article class="edu-card reveal">
+            <span class="edu-marker edu-marker--3"><i data-lucide="book-open"></i></span>
+            <div class="edu-body">
+              <h3 data-i18n="edu.msc.title">MSc in Microelectronics</h3>
+              <a class="edu-place" href="https://posgrados.esimecu.ipn.mx/" target="_blank" rel="noopener" data-i18n="edu.msc.place">ESIME Culhuacán – IPN · 2020 – 2022</a>
+            </div>
+          </article>
+
+          <article class="edu-card reveal">
+            <span class="edu-marker edu-marker--4"><i data-lucide="cpu"></i></span>
+            <div class="edu-body">
+              <h3 data-i18n="edu.bsc.title">BSc in Automotive Systems Engineering</h3>
+              <a class="edu-place" href="https://www.upiita.ipn.mx/oferta-educativa/isisa" target="_blank" rel="noopener" data-i18n="edu.bsc.place">UPIITA – IPN · 2015 – 2019</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section section--dark projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="projects.eyebrow">Selected work</span>
+          <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+          <p class="section-lead" data-i18n="projects.lead">Applied AI systems built to protect people and solve real problems.</p>
+        </header>
+
+        <div class="projects-viewport reveal reveal--zoom">
+          <button class="proj-nav prev" id="projPrev" type="button" aria-label="Previous project">&#10094;</button>
+          <div class="projects-stage" id="projectStage"></div>
+          <button class="proj-nav next" id="projNext" type="button" aria-label="Next project">&#10095;</button>
+        </div>
+        <div class="projects-dots" id="projectDots" aria-hidden="true"></div>
+
+        <div class="projects-cta reveal">
+          <a href="models.html" class="btn btn--ghost">
+            <span data-i18n="projects.cta">Explore models &amp; demos</span><span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PAPERS ============ -->
+    <section id="papers" class="section papers">
+      <div class="container">
+        <div class="papers-top">
+          <div class="papers-figure reveal">
+            <img src="img/Ch_1.png" alt="Research workspace" />
+          </div>
+
+          <div class="papers-content reveal">
+            <span class="eyebrow" data-i18n="papers.eyebrow">Research output</span>
+            <h2 class="section-title" data-i18n="papers.title">Publications &amp; recognition</h2>
+            <p class="section-lead" data-i18n="papers.lead">Peer-reviewed work in Computer Vision, anomaly detection and intelligent systems.</p>
+
+            <div class="papers-grid">
+              <a href="https://www.mdpi.com/2076-3417/15/17/9249" target="_blank" rel="noopener" class="paper-box">
+                <h3>An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance</h3>
+                <span class="paper-meta">Applied Sciences (MDPI) · 2025</span>
+              </a>
+              <a href="https://2026.talent-land.mx/eventos/translownet-ia-embebida-para-deteccion-de-violencia-en-transporte-publico-jonathan-mauricio-flores-monroy-instituto-politecnico-nacional/" target="_blank" rel="noopener" class="paper-box">
+                <h3>TransLowNet: AI for Violence Detection in Public Transportation</h3>
+                <span class="paper-meta">Talent Land · Mexico · 2025</span>
+              </a>
+              <a href="https://ieeexplore.ieee.org/abstract/document/10197740" target="_blank" rel="noopener" class="paper-box">
+                <h3>Face Expression Recognition using Recurrent Neural Networks</h3>
+                <span class="paper-meta">IEEE TSP · 2023</span>
+              </a>
+              <a href="https://vidoc.impi.gob.mx/busquedarapida" target="_blank" rel="noopener" class="paper-box">
+                <h3>Portable AI-Based Driver Monitoring System</h3>
+                <span class="paper-meta">Patent MX/a/2022/015919 · 2022</span>
+              </a>
             </div>
 
-
-
-            <!-- HERO SECTION -->
-            <section id="hero" class="hero full-width wave-section">
-
-                <!-- CARRUSEL -->
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="img_John/img_1.jpg" class="carousel-img active">
-                        <img src="img_John/img_2.jpg" class="carousel-img">
-                        <img src="img_John/img_3.jpg" class="carousel-img">
-                        <img src="img_John/img_4.jpg" class="carousel-img">
-                        <img src="img_John/img_5.jpg" class="carousel-img">
-                    </div>
-
-                    <button class="carousel-btn prev"></button>
-                    <button class="carousel-btn next">></button>
-                </div>
-
-                <!-- TEXTO DEL HERO -->
-                <div class="hero-text">
-            <h1>
-                <a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" 
-                target="_blank" 
-                class="exp-link">
-                Jonathan Flores Monroy
-                </a>
-                </h1>
-
-            <p class="hero-subtitle">
-                    PhD in Artificial Intelligence with specialization in Computer Vision, NLP, and Intelligent Systems.
-                </p>
-                <p class="hero-subtitle">
-                    "Technology gains meaning when grounded in human needs"
-                </p>
+            <div class="papers-cta">
+              <a href="research.html#papers" class="btn btn--ghost">
+                <span data-i18n="papers.cta">See all publications</span><span class="arrow">→</span>
+              </a>
             </div>
-            </section>
-
-            <!-- About Me SECTION -->
-                <section id="about" class="about-section wave-section">
-
-                <h1>ABOUT ME</h1>
-                <h3 class="about-subtitle">AI Researcher and Engineer working across research, development, and applied technology to solve real-world problems</h3>
-
-                <div class="about-grid">
-
-                    <div class="about-item researcher-card">
-                        <i data-lucide="microscope"></i>
-                        <h2>Researcher</h2>
-                        <p>PhD in Artificial Intelligence conducting research in Computer Vision, NLP, and Intelligent Systems for real-world applications.</p>
-                        <a href="#education" class="full-click"></a>
-                        <div class="about-links">
-                            <a href="#projects">Projects</a>
-                            <a href="#papers">Papers</a>
-                            <a href="#papers">Conferences</a>
-                            <a href="#papers">Patents</a>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="about-item researcher-card">
-                        <i data-lucide="laptop"></i>
-                        <h2>Developer</h2>
-                        <p>Developer specialized in QA automation and system validation, with experience supporting intelligent systems on edge devices.</p>
-                        <a href="#experience" class="full-click"></a>
-                        <div class="about-links">
-                            <a href="#projects">Projects</a>
-                        </div>
-                    </div>
-
-                    <div class="about-item researcher-card">
-                        <i data-lucide="cpu"></i>
-                        <h2>Engineer</h2>
-                        <p>Engineered applied hardware–software systems, including safety and anti-theft technologies designed for real-world use.</p>
-                        <a href="#experience" class="full-click"></a>
-                        <div class="about-links">
-                            <a href="#projects">Projects</a>
-                        </div>
-                    </div>
-
-                    <div class="about-item researcher-card">
-                        <i data-lucide="wrench"></i>
-                        <h2>Technician</h2>
-                        <p>Technical experience in system diagnostics, hardware troubleshooting, and maintenance of computing systems.</p>
-                        <a href="#experience" class="full-click"></a>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- ================= -->
-            <!-- EDUCATION SUBSECTION -->
-            <!-- ================= -->
-            <section id="experience" class="experience-section full-width wave-section">
-
-            <h1>EXPERIENCE</h1>
-
-                <div class="experience-grid">
-
-                    <!-- BOX 1 -->
-                    <div class="experience-card">
-                        <h2>
-                            <a href="https://posgrados.esimecu.ipn.mx/" target="_blank" class="exp-link">
-                                INSTITUTO POLITÉCNICO NACIONAL
-                            </a>
-                        </h2>
-
-                        <p class="exp-years">
-                            <a href="https://orcid.org/0000-0002-2467-3600" target="_blank" class="exp-link">
-                                Researcher
-                            </a>
-                            | 2020 – Currently
-                        </p>
-
-                        <ul>
-                            <li>Conducted applied research in Computer Vision, Natural Language Processing, and Intelligent Systems.</li>
-                            <li>Authored peer-reviewed journal articles and international conference papers.</li>
-                            <li>Participated in international research collaborations, including academic research stays in Japan.</li>
-                            <li>Developed applied and deployable AI methods addressing real-world problems.</li>
-                            <li>Served as technical advisor and graduate mentor, supporting academic and applied research projects.</li>
-                        </ul>
-                    </div>
-
-
-                    <!-- BOX 2 -->
-                    <div class="experience-card">
-                        <h2>
-                            <a href="https://www.solera.com" target="_blank" class="exp-link">
-                                SOLERA
-                            </a>
-                        </h2>
-
-                        <p class="exp-years">Software Development Engineer In Test I | 2022 </p>
-                        <!-- <p class="exp-years">Jr Software Development Engineer | 2022 </p> -->
-
-                        
-                        <ul>
-                            <li>Ensured software quality and system reliability through structured manual and automated testing strategies.</li>
-                            <li>Led backend and API validation efforts, focusing on correctness, consistency, and robustness of enterprise systems.</li>
-                            <li>Analyzed system behavior and data flows to identify, diagnose, and mitigate defects across distributed components.</li>
-                            <li>Collaborated with cross-functional teams within Agile development cycles to improve testing processes and quality standards.</li>
-                            <li>Contributed to a quality-driven development culture, supporting stable releases and long-term maintainability.</li>
-                        </ul>
-                        
-                    </div>
-
-                    <!-- BOX 3 -->
-                    <div class="experience-card">
-                        <h2>Freelancer</h2>
-                        <p class="exp-years">Technical Systems Specialist & Founder | 2015 – Currently</p>
-                        <ul>
-                            <li>Founded and operated an independent technical services business focused on diagnostics, maintenance, and system-level problem solving.</li>
-                            <li>Managed end-to-end operations, including technical execution, client communication, and service quality assurance.</li>
-                            <li>Delivered reliable technical solutions in real-world environments, ensuring long-term system functionality and customer trust.</li>
-                            <li>Developed strong autonomy, responsibility, and decision-making skills through hands-on entrepreneurial experience.</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
-                    <div class="my-carousel swiper">
-                    <div class="swiper-wrapper" id="swiper-random">
-                        
-                        <div class="swiper-slide"><img src="img_John/img_6.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_7.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_8.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_9.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_10.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_11.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_12.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_13.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_14.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_15.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_16.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_17.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_18.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_19.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_20.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_21.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_22.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_23.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_24.jpg"></div>
-                        <div class="swiper-slide"><img src="img_John/img_25.jpg"></div>
-                    </div>
-                    </div>
-
-                <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-            </section>
-
-
-
-            <!-- ================= -->
-            <!-- EDUCATION SUBSECTION -->
-            <!-- ================= -->
-            <section id="education" class="education-section-arch wave-section">
-
-                <h1 class="education-title">Education</h1>
-
-                <div class="education-arch-grid">
-
-                    <!-- PhD -->
-                    <div class="edu-arch-card edu-purple">
-                        <div class="arch-top">
-                            <i data-lucide="graduation-cap"></i>
-                        </div>
-                        <div class="arch-content">
-                            <h2>PhD in Communications and Electronics Engineering (Artificial Intelligence)</h2>
-                            <a href="https://posgrados.esimecu.ipn.mx/" target="_blank" class="exp-link">
-                                <p>ESIME Culhuacán – IPN<br>2023 – 2027</p>
-                            </a>
-                            <!-- <p>ESIME Culhuacán – IPN<br>2023–2027</p> -->
-                        </div>
-                    </div>
-
-                    <!-- Research Stay -->
-                    <div class="edu-arch-card edu-blue">
-                        <div class="arch-top">
-                            <i data-lucide="school"></i>
-                        </div>
-                        <div class="arch-content">
-                            <h2>Visiting Research Student</h2>
-                            <a href="https://researchmap.jp/VC_rocky?lang=ja" target="_blank" class="exp-link">
-                                <p>UEC Tokyo – Japan<br>2023 – 2024</p>
-                            </a>
-                            
-                        </div>
-                    </div>
-
-                    <!-- MSc -->
-                    <div class="edu-arch-card edu-red">
-                        <div class="arch-top">
-                            <i data-lucide="book-open"></i>
-                        </div>
-                        <div class="arch-content">
-                            <h2>MSE in Microelectronics</h2>
-                            <a href="https://posgrados.esimecu.ipn.mx/" target="_blank" class="exp-link">
-                                <p>ESIME Culhuacán – IPN<br>2020 – 2022</p>
-                            </a>
-                            
-                        </div>
-                    </div>
-
-                    <!-- BSc -->
-                    <div class="edu-arch-card edu-orange">
-                        <div class="arch-top">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <div class="arch-content">
-                            <h2>BSc in Automotive Systems Engineering</h2>
-                            <a href="https://www.upiita.ipn.mx/oferta-educativa/isisa" target="_blank" class="exp-link">
-                                <p>UPIITA – IPN<br>2015 – 2019</p>
-                            </a>
-                            
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-
-
-
-
-
-            
-
-
-
-
-            <!-- ================= -->
-            <!-- PROJECTS SUBSECTION -->
-            <!-- ================= -->
-            <section id="projects" class="projects-section full-width wave-section">
-                <h1 class="projects-title">Projects</h1>
-
-                <div class="carousel-wrapper">
-
-                    <!-- Botón Izquierdo -->
-                    <button id="prevBtn" class="nav-btn">❮</button>
-
-                    <!-- Carrusel -->
-                    <div id="projectCarousel" class="carousel_2"></div>
-
-                    <!-- Botón Derecho -->
-                    <button id="nextBtn" class="nav-btn">❯</button>
-                </div>
-            </section>
-
-
-            <!-- ================= -->
-            <!-- PAPERS SUBSECTION -->
-            <!-- ================= -->
-            <!-- <section id="papers" class="section">
-                <h2>Papers</h2>
-                <p>List of publications in journals, conferences, book chapters.</p>
-            </section> -->
-
-
-            <section id="papers" class="papers-section wave-section">
-            <div class="papers-inner">
-                <div class="papers-top">
-                    
-                    <!-- Imagen izquierda -->
-                    <div class="papers-image">
-                    <img src="img/Ch_1.png" alt="Research workspace">
-                    </div>
-
-                    <!-- Papers -->
-                    <div class="papers-content">
-                    <h1>Research Output</h1>
-
-                    <div class="papers-grid">
-                        <!-- <a href="https://www.mdpi.com/2076-3417/15/17/9249" class="paper-box">
-                            Flores-Monroy, J., Benitez-Garcia, G., Nakano-Miyatake, M., & Takahashi, H. (2025). An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance. Applied Sciences, 15(17), 9249 </a> -->
-
-                        <a href="https://www.mdpi.com/2076-3417/15/17/9249" class="paper-box">
-                            <h3 class="paper-title">
-                                An Online Modular Framework for Anomaly Detection and Multiclass Classification in Video Surveillance
-                            </h3>
-
-                            <span class="paper-meta">
-                                Applied Sciences (MDPI) · 2025
-                            </span>
-
-                        </a>
-
-                        <a href="https://2026.talent-land.mx/eventos/translownet-ia-embebida-para-deteccion-de-violencia-en-transporte-publico-jonathan-mauricio-flores-monroy-instituto-politecnico-nacional/" class="paper-box">
-                            <h3 class="paper-title">
-                                TransLowNet: AI for Violence Detection in Public Transportation
-                            </h3>
-
-                            <span class="paper-meta">
-                                TalenLand · Mexico · 2025
-                            </span>
-
-                        </a>
-
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10197740" class="paper-box">
-                            <h3 class="paper-title">
-                                Face Expression Recognition using Recurrent Neural Networks
-                            </h3>
-
-                            <span class="paper-meta">
-                                IEEE TSP · 2023
-                            </span>
-
-                        </a>
-
-
-                        <a href="https://vidoc.impi.gob.mx/busquedarapida" class="paper-box">
-                            <h3 class="paper-title">
-                                Portable AI-Based Driver Monitoring System
-                            </h3>
-
-                            <span class="paper-meta">
-                                MX/a/2022/015919 · 2022
-                            </span>
-
-                        </a>
-
-                        <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10197740" class="paper-box">Sanchez-Ruiz, M., Flores-Monroy, J., Nakano-Miyatake, M., Escamilla-Hernandez, E., & Perez-Meana, H. (2023, July). Face Expression Recognition using Recurrent Neural Networks. In 2023 46th International Conference on Telecommunications and Signal Processing (TSP) (pp. 148-153). IEEE.</a> -->
-
-
-                        <!-- <a href="https://www.mdpi.com/2079-9292/11/16/2558" class="paper-box">Flores-Monroy, J., Nakano-Miyatake, M., Escamilla-Hernandez, E., Sanchez-Perez, G., & Perez-Meana, H. (2022). SOMN_IA: Portable and universal device for real-time detection of driver’s drowsiness and distraction levels. Electronics, 11(16), 2558.</a>
-
-
-                        <a href="https://ieeexplore.ieee.org/abstract/document/9633082" class="paper-box">Flores-Monroy, J., Nakano-Miyatake, M., Sanchez-Perez, G., & Perez-Meana, H. (2021, November). Visual-based real time driver drowsiness detection system using CNN. In 2021 18th International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE) (pp. 1-5). IEEE.</a> -->
-                    </div>
-
-                    <div class="papers-cta">
-                    <a href="research.html#projects" class="cta-outline">
-                        SEE OUTREACH PROJECTS
-                        <span class="cta-arrow">→</span>
-                    </a>
-                    </div>
-
-
-                    </div>
-            </div>
-
-                
-
-
-
-            </div>
-
-            <!-- Logos -->
-            <div class="papers-logos">
-                <div class="logos-track" id="logosTrack">
-                <img src="img/logo_1.png">
-                <img src="img/logo_2.png">
-                <img src="img/logo_3.png">
-                <img src="img/logo_4.png">
-                <img src="img/logo_5.png">
-                <img src="img/logo_6.png">
-                <img src="img/logo_7.png">
-                <img src="img/logo_8.png">
-                <img src="img/logo_9.png">
-                <img src="img/logo_10.png">
-                <img src="img/logo_11.png">
-                <img src="img/logo_12.png">
-                <img src="img/logo_13.png">
-                <img src="img/logo_14.png">
-                <img src="img/logo_15.png">
-                </div>
-            </div>
-            
-            <script src="script.js"></script>
-            <script>
-                lucide.createIcons();
-            </script>
-
-            </section>
-
-
-
-
-
-
-            <!-- ================= -->
-            <!-- CONFERENCES SUBSECTION -->
-            <!-- ================= -->
-            <!-- <section id="conferences" class="section">
-                <h2>Conferences</h2>
-                <p>Your conference talks, posters, workshop presentations.</p>
-            </section> -->
-
-            
-
-
-            <!-- CONTACT SECTION -->
-            <section id="contact" class="contact-section full-width">
-                <div class="contact-inner">
-
-                    <h2 class="contact-title">Let’s build together</h2>
-
-                    <p class="contact-text">
-                    Science grows stronger when it’s shared.
-                    If you’re interested in collaboration, research projects,
-                    or exchanging ideas, let’s get in touch.
-                    </p>
-
-                    <div class="contact-cards">
-                        <a href="mailto:jonathan123987j@gmail.com"
-                            class="contact-card">
-                            Email
-                        </a>
-
-                        <a href="https://github.com/JonathanFlores2503"
-                            target="_blank"    
-                            class="contact-card">
-                            GitHub
-                        </a>
-                    
-                        <a href="https://www.linkedin.com/in/jonathan-flores-35185617b/"
-                            target="_blank"
-                            class="contact-card">
-                            LinkedIn
-                        </a>
-
-
-                        <a href="https://www.instagram.com/el_drjohn/"
-                            target="_blank"
-                            class="contact-card">
-                            Instagram
-                        </a>
-
-                        <a href="Resume/short.pdf"
-                            target="_blank"
-                            class="contact-card">
-                            Short Resume
-                        </a>
-
-                        <a href="Resume/full.pdf"
-                            target="_blank"
-                            class="contact-card">
-                            Full Resume
-                        </a>
-
-
-
-
-                    </div>
-
-
-
-                </div>
-            </section>
-
-<footer>
-    <p>&copy; 2026 Jonathan Flores Monroy - Applied AI Researcher</p>
-</footer>
-
+          </div>
+        </div>
+
+        <div class="logos reveal" aria-hidden="true">
+          <div class="logos-track" id="logosTrack">
+            <img src="img/logo_1.png" alt="" /><img src="img/logo_2.png" alt="" /><img src="img/logo_3.png" alt="" />
+            <img src="img/logo_4.png" alt="" /><img src="img/logo_5.png" alt="" /><img src="img/logo_6.png" alt="" />
+            <img src="img/logo_7.png" alt="" /><img src="img/logo_8.png" alt="" /><img src="img/logo_9.png" alt="" />
+            <img src="img/logo_10.png" alt="" /><img src="img/logo_11.png" alt="" /><img src="img/logo_12.png" alt="" />
+            <img src="img/logo_13.png" alt="" /><img src="img/logo_14.png" alt="" /><img src="img/logo_15.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section--dark skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow" data-i18n="skills.eyebrow">Toolbox</span>
+          <h2 class="section-title" data-i18n="skills.title">Skills &amp; stack</h2>
+          <p class="section-lead" data-i18n="skills.lead">Tools and models I use across research, engineering and deployment.</p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-cat reveal">
+            <h3><i data-lucide="terminal"></i><span data-i18n="skills.cat.systems">Programming &amp; Systems</span></h3>
+            <ul class="chips">
+              <li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li><li>scikit-learn</li><li>Pandas</li>
+              <li>Docker</li><li>CI/CD (Jenkins)</li><li>Git</li><li>Linux</li><li>AWS EC2</li><li>REST APIs</li>
+              <li>Agile/Scrum</li><li>NVIDIA Enterprise</li><li>NVIDIA Omniverse (CARLA, Isaac Sim)</li><li>Tesseract OCR</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat reveal">
+            <h3><i data-lucide="scan-eye"></i><span data-i18n="skills.cat.cv">Computer Vision</span></h3>
+            <ul class="chips">
+              <li>OpenCV</li><li>ResNet</li><li>MobileNet</li><li>YOLO</li><li>SSD</li>
+              <li>C3D</li><li>I3D</li><li>X3D</li><li>ViT</li><li>Swin</li><li>UniFormer</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat reveal">
+            <h3><i data-lucide="brain"></i><span data-i18n="skills.cat.ml">ML, NLP &amp; Multimodal</span></h3>
+            <ul class="chips">
+              <li>CNN</li><li>Transformers</li><li>VQGAN</li><li>BERT</li><li>BART</li><li>GPT-4</li>
+              <li>LLaMA 3</li><li>Qwen</li><li>Ollama</li><li>Faster Whisper</li><li>CLIP</li><li>ImageBind</li>
+              <li>Vision–Audio sentiment</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat reveal">
+            <h3><i data-lucide="rocket"></i><span data-i18n="skills.cat.deploy">Training &amp; Deployment</span></h3>
+            <ul class="chips">
+              <li>Training</li><li>Fine-tuning</li><li>Evaluation</li><li>Inference</li>
+              <li>Model &amp; pipeline dockerization</li><li>Edge deployment</li><li>Compute-constrained testing</li>
+            </ul>
+          </article>
+
+          <article class="skill-cat reveal skill-cat--wide">
+            <h3><i data-lucide="languages"></i><span data-i18n="skills.cat.languages">Languages</span></h3>
+            <ul class="chips">
+              <li data-i18n="skills.lang.es">Spanish (Native)</li>
+              <li data-i18n="skills.lang.en">English (Technical / Conversational)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <div class="container contact-inner reveal reveal--zoom">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+        <h2 class="section-title" data-i18n="contact.title">Let’s build together</h2>
+        <p class="section-lead contact-text" data-i18n="contact.text">
+          Science grows stronger when it’s shared. If you’re interested in collaboration, research projects or exchanging ideas, let’s get in touch.
+        </p>
+
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:jonathan123987j@gmail.com"><i data-lucide="mail"></i>Email</a>
+          <a class="contact-card" href="tel:+525566166376"><i data-lucide="phone"></i>+52 55 6616 6376</a>
+          <a class="contact-card" href="https://github.com/JonathanFlores2503" target="_blank" rel="noopener"><i data-lucide="github"></i>GitHub</a>
+          <a class="contact-card" href="https://www.linkedin.com/in/jonathan-flores-35185617b/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i>LinkedIn</a>
+          <a class="contact-card" href="https://www.instagram.com/el_drjohn/" target="_blank" rel="noopener"><i data-lucide="instagram"></i>Instagram</a>
+          <a class="contact-card" href="Resume/short.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i><span data-i18n="contact.shortcv">Short CV</span></a>
+          <a class="contact-card" href="Resume/full.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i><span data-i18n="contact.fullcv">Full CV</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jonathan Flores Monroy · <span data-i18n="footer.role">Applied AI Researcher</span></p>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=CGZzs2MAAAAJ&hl=es" target="_blank" rel="noopener">Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0002-2467-3600" target="_blank" rel="noopener">ORCID</a></li>
+        <li><a href="https://github.com/JonathanFlores2503" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
